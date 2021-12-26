@@ -93,27 +93,29 @@ public class GraphvizUtils {
 
     /** 生成文件 */
     public static void toFile(Graph g, File dir, String name, String tip) {
-        // 避免超时：Command took too long to execute, try setting a higher timout:
-        Graphviz.useEngine(new GraphvizCmdLineEngine().timeout(2, TimeUnit.MINUTES));
-        Graphviz graph = Graphviz.fromGraph(g);
-        Format[] formats = {
-                Format.DOT,
-                Format.PNG,
-                Format.SVG,
-        };
-        File file = null;
-        try {
-            for (Format format : formats) {
-                file = new File(dir, name + "." + format.fileExtension);
-                graph.render(format).toFile(file);
-                LOGGER.info("{} {} 格式：\tfile:///{}",
-                        tip, format.fileExtension, file.getAbsolutePath().replace('\\', '/'));
+        try (GraphvizCmdLineEngine engine = new GraphvizCmdLineEngine()) {
+            // 避免超时：Command took too long to execute, try setting a higher timout:
+            Graphviz.useEngine(engine.timeout(2, TimeUnit.MINUTES));
+            Graphviz graph = Graphviz.fromGraph(g);
+            Format[] formats = {
+                    Format.DOT,
+                    Format.PNG,
+                    Format.SVG,
+            };
+            File file = null;
+            try {
+                for (Format format : formats) {
+                    file = new File(dir, name + "." + format.fileExtension);
+                    graph.render(format).toFile(file);
+                    LOGGER.info("{} {} 格式：\tfile:///{}",
+                            tip, format.fileExtension, file.getAbsolutePath().replace('\\', '/'));
+                }
+            } catch (IOException e) {
+                LOGGER.info(file.getAbsolutePath(), e);
+            } catch (GraphvizException e) {
+                LOGGER.warn("解析报错 or 没有配置环境变量 or 没有安装 Graphviz：https://www2.graphviz.org/Archive/stable/\n  {}",
+                        e.getLocalizedMessage());
             }
-        } catch (IOException e) {
-            LOGGER.info(file.getAbsolutePath(), e);
-        } catch (GraphvizException e) {
-            LOGGER.warn("解析报错 or 没有配置环境变量 or 没有安装 Graphviz：https://www2.graphviz.org/Archive/stable/\n  {}",
-                    e.getLocalizedMessage());
         }
     }
 }

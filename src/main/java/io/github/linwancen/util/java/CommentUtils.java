@@ -19,7 +19,7 @@ public class CommentUtils {
     }
 
     private static final Pattern BR_PATTERN = Pattern.compile("[\r\n]{0,2}</?[^>]++/?>[\r\n]{0,2}");
-    private static final Pattern A_PATTERN = Pattern.compile("\\{@\\w* (?:[^}]++\\.)?([^.}]++)}");
+    private static final Pattern A_PATTERN = Pattern.compile("\\{@\\w* (?:[^}]+\\.)?([^.}]++)}");
 
     /**
      * 去除 html 和 大括号 标签
