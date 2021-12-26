@@ -26,7 +26,7 @@ public class JavaParseImplGraphviz implements JavaParse {
 
     private final LinkedHashMap<String, LinkedHashMap<String, Node>> typeMethodMap = new LinkedHashMap<>();
 
-    public Rank.RankDir rankDir = Rank.RankDir.LEFT_TO_RIGHT;
+    public Rank.RankDir rankDir = Rank.RankDir.valueOf(Conf.DIAGRAMS_DOT_DIR.get());
 
     public Graph g = GraphvizUtils.initWithFont(rankDir, "");
 

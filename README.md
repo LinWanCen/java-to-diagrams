@@ -81,4 +81,4 @@
 
 ![xmind-demo.png](xmind-demo.png)
 
-![graphviz-dot-demo.svg](graphviz-dot-demo.svg)
+![graphviz-dot-demo.png](graphviz-dot-demo.png)
