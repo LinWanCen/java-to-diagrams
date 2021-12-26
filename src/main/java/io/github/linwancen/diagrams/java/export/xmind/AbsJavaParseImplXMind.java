@@ -1,0 +1,59 @@
+package io.github.linwancen.diagrams.java.export.xmind;
+
+import io.github.linwancen.diagrams.Conf;
+import io.github.linwancen.diagrams.java.api.JavaParse;
+import io.github.linwancen.util.xmind.XMindUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.xmind.core.*;
+
+import java.io.File;
+
+/**
+ * XMind 思维导图/脑图 实现
+ */
+public abstract class AbsJavaParseImplXMind implements JavaParse {
+
+    private static final Logger LOG = LoggerFactory.getLogger(AbsJavaParseImplXMind.class);
+
+    protected final File outDir;
+    protected final String outName;
+
+    public AbsJavaParseImplXMind(File outDir, String outName) {
+        this.outDir = outDir;
+        this.outName = outName;
+    }
+
+    protected final IWorkbookBuilder workbookBuilder = Core.getWorkbookBuilder();
+    protected final IWorkbook workbook = workbookBuilder.createWorkbook();
+    protected final ISheet primarySheet = workbook.getPrimarySheet();
+    protected final ITopic rootTopic = primarySheet.getRootTopic();
+
+    protected final boolean showSymbol = "true".equals(Conf.DIAGRAMS_SHOW_SYMBOL.get());
+
+    /**
+     * 处理并生成思维导图文件
+     */
+    @Override
+    public void end() {
+        beforeSave();
+        try {
+            // 后缀大小写不对会导致打开软件没打开文件
+            String path = new File(outDir, outName + "." + XMindUtils.XMIND).getCanonicalPath();
+            workbook.save(path);
+            LOG.info("思维导图/脑图：{}\tfile:///{}", tipName(), path.replace('\\', '/'));
+        } catch (Exception e) {
+            LOG.error("save fail, ", e);
+        }
+    }
+
+    /**
+     * 图形名字
+     */
+    protected abstract String tipName();
+
+    /**
+     * 保存前处理
+     */
+    protected abstract void beforeSave();
+}

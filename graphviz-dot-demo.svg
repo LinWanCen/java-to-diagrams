@@ -1,0 +1,223 @@
+<svg width="3753px" height="716px"
+ viewBox="0.00 0.00 3752.50 716.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 712.0)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-712 3748.5,-712 3748.5,4 -4,4"/>
+<g id="clust1" class="cluster"><title>cluster_io.github.linwancen.diagrams.java.parser.InfoFactory_C</title>
+<polygon fill="none" stroke="blue" points="3340.5,-8 3340.5,-211 3744.5,-211 3744.5,-8 3340.5,-8"/>
+<text text-anchor="middle" x="3542.5" y="-195.8" font-family="Microsoft YaHei" font-size="14.00">JavaInfo 工厂类</text>
+<text text-anchor="middle" x="3542.5" y="-180.8" font-family="Microsoft YaHei" font-size="14.00">~C io.github.linwancen.diagrams.java.parser.InfoFactory</text>
+</g>
+<g id="clust2" class="cluster"><title>cluster_io.github.linwancen.diagrams.java.parser.Step1Dirs_C</title>
+<polygon fill="none" stroke="blue" points="0,-219 0,-422 391,-422 391,-219 0,-219"/>
+<text text-anchor="middle" x="195.5" y="-406.8" font-family="Microsoft YaHei" font-size="14.00">步骤 1 目录</text>
+<text text-anchor="middle" x="195.5" y="-391.8" font-family="Microsoft YaHei" font-size="14.00">+C io.github.linwancen.diagrams.java.parser.Step1Dirs</text>
+</g>
+<g id="clust3" class="cluster"><title>cluster_io.github.linwancen.diagrams.java.parser.Step2File_C</title>
+<polygon fill="none" stroke="blue" points="410.5,-219 410.5,-422 1322.5,-422 1322.5,-219 410.5,-219"/>
+<text text-anchor="middle" x="866.5" y="-406.8" font-family="Microsoft YaHei" font-size="14.00">步骤 2 文件</text>
+<text text-anchor="middle" x="866.5" y="-391.8" font-family="Microsoft YaHei" font-size="14.00">~C io.github.linwancen.diagrams.java.parser.Step2File</text>
+</g>
+<g id="clust4" class="cluster"><title>cluster_io.github.linwancen.diagrams.java.parser.Step3Type_C</title>
+<polygon fill="none" stroke="blue" points="1502,-219 1502,-422 2240,-422 2240,-219 1502,-219"/>
+<text text-anchor="middle" x="1871" y="-406.8" font-family="Microsoft YaHei" font-size="14.00">步骤 3 类</text>
+<text text-anchor="middle" x="1871" y="-391.8" font-family="Microsoft YaHei" font-size="14.00">~C io.github.linwancen.diagrams.java.parser.Step3Type</text>
+</g>
+<g id="clust5" class="cluster"><title>cluster_io.github.linwancen.diagrams.java.parser.Step4Members_C</title>
+<polygon fill="none" stroke="blue" points="1342.5,-8 1342.5,-211 2399.5,-211 2399.5,-8 1342.5,-8"/>
+<text text-anchor="middle" x="1871" y="-195.8" font-family="Microsoft YaHei" font-size="14.00">步骤 4 成员</text>
+<text text-anchor="middle" x="1871" y="-180.8" font-family="Microsoft YaHei" font-size="14.00">~C io.github.linwancen.diagrams.java.parser.Step4Members</text>
+</g>
+<g id="clust6" class="cluster"><title>cluster_io.github.linwancen.diagrams.java.parser.Step5MethodCall_C</title>
+<polygon fill="none" stroke="blue" points="2511.5,-8 2511.5,-211 3228.5,-211 3228.5,-8 2511.5,-8"/>
+<text text-anchor="middle" x="2870" y="-195.8" font-family="Microsoft YaHei" font-size="14.00">步骤 5 调用</text>
+<text text-anchor="middle" x="2870" y="-180.8" font-family="Microsoft YaHei" font-size="14.00">~C io.github.linwancen.diagrams.java.parser.Step5MethodCall</text>
+</g>
+<g id="clust8" class="cluster"><title>cluster_tip</title>
+<polygon fill="none" stroke="blue" points="84.5,-430 84.5,-700 306.5,-700 306.5,-430 84.5,-430"/>
+<text text-anchor="middle" x="195.5" y="-684.8" font-family="Microsoft YaHei" font-size="14.00">tip:class</text>
+</g>
+<g id="clust7" class="cluster"><title>cluster_io.github.linwancen.diagrams.java.parser.Step6Over_C</title>
+<polygon fill="none" stroke="blue" points="2419.5,-219 2419.5,-422 3320.5,-422 3320.5,-219 2419.5,-219"/>
+<text text-anchor="middle" x="2870" y="-406.8" font-family="Microsoft YaHei" font-size="14.00">步骤 6 重写</text>
+<text text-anchor="middle" x="2870" y="-391.8" font-family="Microsoft YaHei" font-size="14.00">~C io.github.linwancen.diagrams.java.parser.Step6Over</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step1Dirs.parseDirs(java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.io.File...) -->
+<g id="node1" class="node"><title>io.github.linwancen.diagrams.java.parser.Step1Dirs.parseDirs(java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.io.File...)</title>
+<polygon fill="none" stroke="black" points="111,-283 111,-375 280,-375 280,-283 111,-283"/>
+<text text-anchor="middle" x="195.5" y="-359.8" font-family="Microsoft YaHei" font-size="14.00">解析多个文件或目录</text>
+<polyline fill="none" stroke="black" points="111,-352 280,-352 "/>
+<text text-anchor="middle" x="195.5" y="-336.8" font-family="Microsoft YaHei" font-size="14.00">s+parseDirs : void</text>
+<polyline fill="none" stroke="black" points="111,-329 280,-329 "/>
+<text text-anchor="middle" x="195.5" y="-313.8" font-family="Microsoft YaHei" font-size="14.00">(javaParses, files)</text>
+<polyline fill="none" stroke="black" points="111,-306 280,-306 "/>
+<text text-anchor="middle" x="195.5" y="-290.8" font-family="Microsoft YaHei" font-size="14.00">(List&lt;JavaParse&gt;, File)</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step2File.parseFile(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.util.LinkedHashMap\&lt;java.lang.String, java.lang.String\&gt;, java.io.File, com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver, java.util.Set\&lt;java.lang.String\&gt;) -->
+<g id="node2" class="node"><title>io.github.linwancen.diagrams.java.parser.Step2File.parseFile(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.util.LinkedHashMap\&lt;java.lang.String, java.lang.String\&gt;, java.io.File, com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver, java.util.Set\&lt;java.lang.String\&gt;)</title>
+<polygon fill="none" stroke="black" points="418.5,-283 418.5,-375 1314.5,-375 1314.5,-283 418.5,-283"/>
+<text text-anchor="middle" x="866.5" y="-359.8" font-family="Microsoft YaHei" font-size="14.00">解析文件</text>
+<polyline fill="none" stroke="black" points="418.5,-352 1314.5,-352 "/>
+<text text-anchor="middle" x="866.5" y="-336.8" font-family="Microsoft YaHei" font-size="14.00">s~parseFile : void</text>
+<polyline fill="none" stroke="black" points="418.5,-329 1314.5,-329 "/>
+<text text-anchor="middle" x="866.5" y="-313.8" font-family="Microsoft YaHei" font-size="14.00">(typeMap, javaParses, packCommentMap, file, solver, addSrc)</text>
+<polyline fill="none" stroke="black" points="418.5,-306 1314.5,-306 "/>
+<text text-anchor="middle" x="866.5" y="-290.8" font-family="Microsoft YaHei" font-size="14.00">(LinkedHashMap&lt;String, TypeInfo&gt;, List&lt;JavaParse&gt;, LinkedHashMap&lt;String, String&gt;, File, CombinedTypeSolver, Set&lt;String&gt;)</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step1Dirs.parseDirs(java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.io.File...)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step2File.parseFile(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.util.LinkedHashMap\&lt;java.lang.String, java.lang.String\&gt;, java.io.File, com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver, java.util.Set\&lt;java.lang.String\&gt;) -->
+<g id="edge1" class="edge"><title>io.github.linwancen.diagrams.java.parser.Step1Dirs.parseDirs(java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.io.File...)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step2File.parseFile(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.util.LinkedHashMap\&lt;java.lang.String, java.lang.String\&gt;, java.io.File, com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver, java.util.Set\&lt;java.lang.String\&gt;)</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M280.214,-329C315.721,-329 360.08,-329 408.4,-329"/>
+<polygon fill="black" stroke="black" points="418.442,-329 408.442,-333.5 413.442,-329 408.442,-329 408.442,-329 408.442,-329 413.442,-329 408.442,-324.5 418.442,-329 418.442,-329"/>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;) -->
+<g id="node3" class="node"><title>io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;)</title>
+<polygon fill="none" stroke="black" points="1510,-283 1510,-375 2232,-375 2232,-283 1510,-283"/>
+<text text-anchor="middle" x="1871" y="-359.8" font-family="Microsoft YaHei" font-size="14.00">解析类</text>
+<polyline fill="none" stroke="black" points="1510,-352 2232,-352 "/>
+<text text-anchor="middle" x="1871" y="-336.8" font-family="Microsoft YaHei" font-size="14.00">s~parseType : void</text>
+<polyline fill="none" stroke="black" points="1510,-329 2232,-329 "/>
+<text text-anchor="middle" x="1871" y="-313.8" font-family="Microsoft YaHei" font-size="14.00">(typeMap, javaParses, type, packNames, packComments)</text>
+<polyline fill="none" stroke="black" points="1510,-306 2232,-306 "/>
+<text text-anchor="middle" x="1871" y="-290.8" font-family="Microsoft YaHei" font-size="14.00">(LinkedHashMap&lt;String, TypeInfo&gt;, List&lt;JavaParse&gt;, TypeDeclaration&lt;?&gt;, List&lt;String&gt;, List&lt;String&gt;)</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step2File.parseFile(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.util.LinkedHashMap\&lt;java.lang.String, java.lang.String\&gt;, java.io.File, com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver, java.util.Set\&lt;java.lang.String\&gt;)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;) -->
+<g id="edge2" class="edge"><title>io.github.linwancen.diagrams.java.parser.Step2File.parseFile(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, java.util.LinkedHashMap\&lt;java.lang.String, java.lang.String\&gt;, java.io.File, com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver, java.util.Set\&lt;java.lang.String\&gt;)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;)</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1314.51,-329C1376.46,-329 1439.53,-329 1499.87,-329"/>
+<polygon fill="black" stroke="black" points="1509.92,-329 1499.92,-333.5 1504.92,-329 1499.92,-329 1499.92,-329 1499.92,-329 1504.92,-329 1499.92,-324.5 1509.92,-329 1509.92,-329"/>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step6Over.parseOver(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;com.github.javaparser.resolution.types.ResolvedReferenceType\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, boolean) -->
+<g id="node4" class="node"><title>io.github.linwancen.diagrams.java.parser.Step6Over.parseOver(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;com.github.javaparser.resolution.types.ResolvedReferenceType\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, boolean)</title>
+<polygon fill="none" stroke="black" points="2427.5,-283 2427.5,-375 3312.5,-375 3312.5,-283 2427.5,-283"/>
+<text text-anchor="middle" x="2870" y="-359.8" font-family="Microsoft YaHei" font-size="14.00">解析实现或继承</text>
+<polyline fill="none" stroke="black" points="2427.5,-352 3312.5,-352 "/>
+<text text-anchor="middle" x="2870" y="-336.8" font-family="Microsoft YaHei" font-size="14.00">s~parseOver : void</text>
+<polyline fill="none" stroke="black" points="2427.5,-329 3312.5,-329 "/>
+<text text-anchor="middle" x="2870" y="-313.8" font-family="Microsoft YaHei" font-size="14.00">(typeMap, javaParses, type, parents, overTypeInfo, isImpl)</text>
+<polyline fill="none" stroke="black" points="2427.5,-306 3312.5,-306 "/>
+<text text-anchor="middle" x="2870" y="-290.8" font-family="Microsoft YaHei" font-size="14.00">(LinkedHashMap&lt;String, TypeInfo&gt;, List&lt;JavaParse&gt;, TypeDeclaration&lt;?&gt;, List&lt;ResolvedReferenceType&gt;, TypeInfo, boolean)</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step6Over.parseOver(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;com.github.javaparser.resolution.types.ResolvedReferenceType\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, boolean) -->
+<g id="edge4" class="edge"><title>io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step6Over.parseOver(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;com.github.javaparser.resolution.types.ResolvedReferenceType\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, boolean)</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M2232.29,-329C2292.25,-329 2355.1,-329 2416.99,-329"/>
+<polygon fill="black" stroke="black" points="2427.31,-329 2417.31,-333.5 2422.31,-329 2417.31,-329 2417.31,-329 2417.31,-329 2422.31,-329 2417.31,-324.5 2427.31,-329 2427.31,-329"/>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step4Members.parseMembers(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;, com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, io.github.linwancen.diagrams.java.api.bean.TypeInfo) -->
+<g id="node5" class="node"><title>io.github.linwancen.diagrams.java.parser.Step4Members.parseMembers(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;, com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, io.github.linwancen.diagrams.java.api.bean.TypeInfo)</title>
+<polygon fill="none" stroke="black" points="1350.5,-72 1350.5,-164 2391.5,-164 2391.5,-72 1350.5,-72"/>
+<text text-anchor="middle" x="1871" y="-148.8" font-family="Microsoft YaHei" font-size="14.00">遍历类解析成员</text>
+<polyline fill="none" stroke="black" points="1350.5,-141 2391.5,-141 "/>
+<text text-anchor="middle" x="1871" y="-125.8" font-family="Microsoft YaHei" font-size="14.00">s~parseMembers : void</text>
+<polyline fill="none" stroke="black" points="1350.5,-118 2391.5,-118 "/>
+<text text-anchor="middle" x="1871" y="-102.8" font-family="Microsoft YaHei" font-size="14.00">(typeMap, javaParses, type, packNames, packComments, rt, typeInfo)</text>
+<polyline fill="none" stroke="black" points="1350.5,-95 2391.5,-95 "/>
+<text text-anchor="middle" x="1871" y="-79.8" font-family="Microsoft YaHei" font-size="14.00">(LinkedHashMap&lt;String, TypeInfo&gt;, List&lt;JavaParse&gt;, TypeDeclaration&lt;?&gt;, List&lt;String&gt;, List&lt;String&gt;, ResolvedReferenceTypeDeclaration, TypeInfo)</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step4Members.parseMembers(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;, com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, io.github.linwancen.diagrams.java.api.bean.TypeInfo) -->
+<g id="edge3" class="edge"><title>io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step4Members.parseMembers(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;, com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, io.github.linwancen.diagrams.java.api.bean.TypeInfo)</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1674.28,-375.005C1543.55,-392.651 1386.38,-384.969 1332.5,-264 1323.46,-243.696 1322.56,-224.811 1342.5,-215 1382.86,-195.147 1426.76,-179.332 1471.44,-166.738"/>
+<polygon fill="black" stroke="black" points="1481.28,-164.017 1472.84,-171.018 1476.46,-165.349 1471.64,-166.68 1471.64,-166.68 1471.64,-166.68 1476.46,-165.349 1470.45,-162.343 1481.28,-164.017 1481.28,-164.017"/>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.InfoFactory.getOrCreateMemberInfo(io.github.linwancen.diagrams.java.api.bean.TypeInfo, com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration) -->
+<g id="node7" class="node"><title>io.github.linwancen.diagrams.java.parser.InfoFactory.getOrCreateMemberInfo(io.github.linwancen.diagrams.java.api.bean.TypeInfo, com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration)</title>
+<polygon fill="none" stroke="black" points="3390.5,-72 3390.5,-164 3693.5,-164 3693.5,-72 3390.5,-72"/>
+<text text-anchor="middle" x="3542" y="-148.8" font-family="Microsoft YaHei" font-size="14.00">获取或新建方法</text>
+<polyline fill="none" stroke="black" points="3390.5,-141 3693.5,-141 "/>
+<text text-anchor="middle" x="3542" y="-125.8" font-family="Microsoft YaHei" font-size="14.00">s~getOrCreateMemberInfo : MemberInfo</text>
+<polyline fill="none" stroke="black" points="3390.5,-118 3693.5,-118 "/>
+<text text-anchor="middle" x="3542" y="-102.8" font-family="Microsoft YaHei" font-size="14.00">(typeInfo, r)</text>
+<polyline fill="none" stroke="black" points="3390.5,-95 3693.5,-95 "/>
+<text text-anchor="middle" x="3542" y="-79.8" font-family="Microsoft YaHei" font-size="14.00">(TypeInfo, ResolvedMethodDeclaration)</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step6Over.parseOver(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;com.github.javaparser.resolution.types.ResolvedReferenceType\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, boolean)&#45;&gt;io.github.linwancen.diagrams.java.parser.InfoFactory.getOrCreateMemberInfo(io.github.linwancen.diagrams.java.api.bean.TypeInfo, com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration) -->
+<g id="edge5" class="edge"><title>io.github.linwancen.diagrams.java.parser.Step6Over.parseOver(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;com.github.javaparser.resolution.types.ResolvedReferenceType\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, boolean)&#45;&gt;io.github.linwancen.diagrams.java.parser.InfoFactory.getOrCreateMemberInfo(io.github.linwancen.diagrams.java.api.bean.TypeInfo, com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration)</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3292.5,-282.994C3301.98,-279.867 3311.33,-276.539 3320.5,-273 3381.2,-249.575 3441.01,-205.873 3482.99,-170.83"/>
+<polygon fill="black" stroke="black" points="3490.88,-164.17 3486.14,-174.059 3487.06,-167.395 3483.23,-170.62 3483.23,-170.62 3483.23,-170.62 3487.06,-167.395 3480.33,-167.182 3490.88,-164.17 3490.88,-164.17"/>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step4Members.parseMembers(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;, com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, io.github.linwancen.diagrams.java.api.bean.TypeInfo)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;) -->
+<g id="edge7" class="edge"><title>io.github.linwancen.diagrams.java.parser.Step4Members.parseMembers(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;, com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, io.github.linwancen.diagrams.java.api.bean.TypeInfo)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step3Type.parseType(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;)</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1481.28,-164.017C1433.22,-177.033 1385.82,-193.691 1342.5,-215 1322.56,-224.811 1323.46,-243.696 1332.5,-264 1385.01,-381.898 1535.64,-392.188 1664.28,-376.299"/>
+<polygon fill="black" stroke="black" points="1674.28,-375.005 1664.94,-380.75 1669.33,-375.646 1664.37,-376.287 1664.37,-376.287 1664.37,-376.287 1669.33,-375.646 1663.79,-371.824 1674.28,-375.005 1674.28,-375.005"/>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step5MethodCall.parseMethodCall(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.BodyDeclaration\&lt;?\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, io.github.linwancen.diagrams.java.api.bean.MemberInfo) -->
+<g id="node6" class="node"><title>io.github.linwancen.diagrams.java.parser.Step5MethodCall.parseMethodCall(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.BodyDeclaration\&lt;?\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, io.github.linwancen.diagrams.java.api.bean.MemberInfo)</title>
+<polygon fill="none" stroke="black" points="2519.5,-72 2519.5,-164 3220.5,-164 3220.5,-72 2519.5,-72"/>
+<text text-anchor="middle" x="2870" y="-148.8" font-family="Microsoft YaHei" font-size="14.00">解析成员中的方法调用</text>
+<polyline fill="none" stroke="black" points="2519.5,-141 3220.5,-141 "/>
+<text text-anchor="middle" x="2870" y="-125.8" font-family="Microsoft YaHei" font-size="14.00">s~parseMethodCall : void</text>
+<polyline fill="none" stroke="black" points="2519.5,-118 3220.5,-118 "/>
+<text text-anchor="middle" x="2870" y="-102.8" font-family="Microsoft YaHei" font-size="14.00">(typeMap, javaParses, m, typeInfo, usageInfo)</text>
+<polyline fill="none" stroke="black" points="2519.5,-95 3220.5,-95 "/>
+<text text-anchor="middle" x="2870" y="-79.8" font-family="Microsoft YaHei" font-size="14.00">(LinkedHashMap&lt;String, TypeInfo&gt;, List&lt;JavaParse&gt;, BodyDeclaration&lt;?&gt;, TypeInfo, MemberInfo)</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step4Members.parseMembers(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;, com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, io.github.linwancen.diagrams.java.api.bean.TypeInfo)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step5MethodCall.parseMethodCall(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.BodyDeclaration\&lt;?\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, io.github.linwancen.diagrams.java.api.bean.MemberInfo) -->
+<g id="edge6" class="edge"><title>io.github.linwancen.diagrams.java.parser.Step4Members.parseMembers(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.TypeDeclaration\&lt;?\&gt;, java.util.List\&lt;java.lang.String\&gt;, java.util.List\&lt;java.lang.String\&gt;, com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, io.github.linwancen.diagrams.java.api.bean.TypeInfo)&#45;&gt;io.github.linwancen.diagrams.java.parser.Step5MethodCall.parseMethodCall(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.BodyDeclaration\&lt;?\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, io.github.linwancen.diagrams.java.api.bean.MemberInfo)</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M2391.67,-118C2431.37,-118 2470.89,-118 2509.22,-118"/>
+<polygon fill="black" stroke="black" points="2519.47,-118 2509.47,-122.5 2514.47,-118 2509.47,-118 2509.47,-118 2509.47,-118 2514.47,-118 2509.47,-113.5 2519.47,-118 2519.47,-118"/>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step5MethodCall.parseMethodCall(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.BodyDeclaration\&lt;?\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, io.github.linwancen.diagrams.java.api.bean.MemberInfo)&#45;&gt;io.github.linwancen.diagrams.java.parser.InfoFactory.getOrCreateMemberInfo(io.github.linwancen.diagrams.java.api.bean.TypeInfo, com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration) -->
+<g id="edge8" class="edge"><title>io.github.linwancen.diagrams.java.parser.Step5MethodCall.parseMethodCall(java.util.LinkedHashMap\&lt;java.lang.String, io.github.linwancen.diagrams.java.api.bean.TypeInfo\&gt;, java.util.List\&lt;io.github.linwancen.diagrams.java.api.JavaParse\&gt;, com.github.javaparser.ast.body.BodyDeclaration\&lt;?\&gt;, io.github.linwancen.diagrams.java.api.bean.TypeInfo, io.github.linwancen.diagrams.java.api.bean.MemberInfo)&#45;&gt;io.github.linwancen.diagrams.java.parser.InfoFactory.getOrCreateMemberInfo(io.github.linwancen.diagrams.java.api.bean.TypeInfo, com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration)</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3220.72,-118C3276.41,-118 3331.55,-118 3379.98,-118"/>
+<polygon fill="black" stroke="black" points="3390.21,-118 3380.21,-122.5 3385.21,-118 3380.21,-118 3380.21,-118 3380.21,-118 3385.21,-118 3380.21,-113.5 3390.21,-118 3390.21,-118"/>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.InfoFactory.InfoFactory() -->
+<g id="node8" class="node"><title>io.github.linwancen.diagrams.java.parser.InfoFactory.InfoFactory()</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="3491.5,-17 3491.5,-53 3592.5,-53 3592.5,-17 3491.5,-17"/>
+<text text-anchor="middle" x="3542" y="-31.3" font-family="Microsoft YaHei" font-size="14.00">&#45;InfoFactory</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step1Dirs.Step1Dirs() -->
+<g id="node9" class="node"><title>io.github.linwancen.diagrams.java.parser.Step1Dirs.Step1Dirs()</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="151.5,-228 151.5,-264 239.5,-264 239.5,-228 151.5,-228"/>
+<text text-anchor="middle" x="195.5" y="-242.3" font-family="Microsoft YaHei" font-size="14.00">&#45;Step1Dirs</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step2File.Step2File() -->
+<g id="node10" class="node"><title>io.github.linwancen.diagrams.java.parser.Step2File.Step2File()</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="824,-228 824,-264 909,-264 909,-228 824,-228"/>
+<text text-anchor="middle" x="866.5" y="-242.3" font-family="Microsoft YaHei" font-size="14.00">&#45;Step2File</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step3Type.Step3Type() -->
+<g id="node11" class="node"><title>io.github.linwancen.diagrams.java.parser.Step3Type.Step3Type()</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="1823.5,-228 1823.5,-264 1918.5,-264 1918.5,-228 1823.5,-228"/>
+<text text-anchor="middle" x="1871" y="-242.3" font-family="Microsoft YaHei" font-size="14.00">&#45;Step3Type</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step4Members.Step4Members() -->
+<g id="node12" class="node"><title>io.github.linwancen.diagrams.java.parser.Step4Members.Step4Members()</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="1807.5,-17 1807.5,-53 1934.5,-53 1934.5,-17 1807.5,-17"/>
+<text text-anchor="middle" x="1871" y="-31.3" font-family="Microsoft YaHei" font-size="14.00">&#45;Step4Members</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step5MethodCall.Step5MethodCall() -->
+<g id="node13" class="node"><title>io.github.linwancen.diagrams.java.parser.Step5MethodCall.Step5MethodCall()</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2799,-17 2799,-53 2941,-53 2941,-17 2799,-17"/>
+<text text-anchor="middle" x="2870" y="-31.3" font-family="Microsoft YaHei" font-size="14.00">&#45;Step5MethodCall</text>
+</g>
+<!-- io.github.linwancen.diagrams.java.parser.Step6Over.Step6Over() -->
+<g id="node14" class="node"><title>io.github.linwancen.diagrams.java.parser.Step6Over.Step6Over()</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="2823,-228 2823,-264 2917,-264 2917,-228 2823,-228"/>
+<text text-anchor="middle" x="2870" y="-242.3" font-family="Microsoft YaHei" font-size="14.00">&#45;Step6Over</text>
+</g>
+<!-- tip -->
+<g id="node15" class="node"><title>tip</title>
+<polygon fill="none" stroke="black" points="92.5,-553.5 92.5,-668.5 298.5,-668.5 298.5,-553.5 92.5,-553.5"/>
+<text text-anchor="middle" x="195.5" y="-653.3" font-family="Microsoft YaHei" font-size="14.00">comment : returnComment</text>
+<polyline fill="none" stroke="black" points="92.5,-645.5 298.5,-645.5 "/>
+<text text-anchor="middle" x="195.5" y="-630.3" font-family="Microsoft YaHei" font-size="14.00">name : returnType</text>
+<polyline fill="none" stroke="black" points="92.5,-622.5 298.5,-622.5 "/>
+<text text-anchor="middle" x="195.5" y="-607.3" font-family="Microsoft YaHei" font-size="14.00">paramComments</text>
+<polyline fill="none" stroke="black" points="92.5,-599.5 298.5,-599.5 "/>
+<text text-anchor="middle" x="195.5" y="-584.3" font-family="Microsoft YaHei" font-size="14.00">paramNames</text>
+<polyline fill="none" stroke="black" points="92.5,-576.5 298.5,-576.5 "/>
+<text text-anchor="middle" x="195.5" y="-561.3" font-family="Microsoft YaHei" font-size="14.00">paramTypes</text>
+</g>
+<!-- tip_field -->
+<g id="node16" class="node"><title>tip_field</title>
+<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="168.5,-496 168.5,-534 222.5,-534 222.5,-496 168.5,-496"/>
+<text text-anchor="middle" x="195.5" y="-518.8" font-family="Microsoft YaHei" font-size="14.00">字段</text>
+<text text-anchor="middle" x="195.5" y="-503.8" font-family="Microsoft YaHei" font-size="14.00">field</text>
+</g>
+<!-- tip_constructor -->
+<g id="node17" class="node"><title>tip_constructor</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="148,-439 148,-477 243,-477 243,-439 148,-439"/>
+<text text-anchor="middle" x="195.5" y="-461.8" font-family="Microsoft YaHei" font-size="14.00">构造方法</text>
+<text text-anchor="middle" x="195.5" y="-446.8" font-family="Microsoft YaHei" font-size="14.00">constructor</text>
+</g>
+</g>
+</svg>

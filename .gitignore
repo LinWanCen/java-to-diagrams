@@ -1,0 +1,33 @@
+logs/
+jstack.log
+jstack.sh
+
+.svn
+
+### Maven
+target/
+!**/src/main/**
+!**/src/test/**
+
+### env
+${*
+
+### IntelliJ IDEA ###
+*.iml
+**/.idea/*
+#### 运行配置
+!**/.idea/runConfigurations
+#### 搜索范围
+!**/.idea/scopes
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### VS Code ###
+.vscode/
