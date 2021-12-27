@@ -17,12 +17,7 @@ import java.util.List;
 public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
 
     public JavaParseImplXMindTree(File outDir, String outName) {
-        super(outDir, outName + "_tree");
-    }
-
-    @Override
-    protected String tipName() {
-        return "成员树";
+        super(outDir, outName + "_tree", "成员树");
     }
 
     private final LinkedHashMap<String, ITopic> packageMap = new LinkedHashMap<>();
@@ -36,7 +31,7 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
      * 成员节点 Map
      * <br>因为是一个类一个类解析的所以不在 {@link #member 中另外判断是不是属于这个类提高性能
      */
-    private LinkedHashMap<MemberEnum, LinkedHashMap<String, ITopic>> memberMap;
+    private LinkedHashMap<MemberEnum, LinkedHashMap<String, ITopic>> currMemberMap;
 
     /**
      * 类处理
@@ -91,15 +86,15 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
         XMindUtils.setNote(workbook, typeTopic, content.toString());
 
         typeTopic.setFolded(true);
-        if (packs.size() > 0) {
+        if (!packs.isEmpty()) {
             packageMap.get(packs.get(0)).add(typeTopic);
         } else {
             rootTopic.add(typeTopic);
         }
         packageMap.put(typeInfo.sign, typeTopic);
 
-        memberMap = new LinkedHashMap<>();
-        typeMemberMap.put(typeInfo.sign, memberMap);
+        currMemberMap = new LinkedHashMap<>();
+        typeMemberMap.put(typeInfo.sign, currMemberMap);
     }
 
     /**
@@ -135,11 +130,17 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
             memberText.append("()");
         }
         memberTopic.setTitleText(memberText.toString());
-        if (info.comment != null) {
-            XMindUtils.setNote(workbook, memberTopic, info.comment);
+
+        StringBuilder content = new StringBuilder();
+        // 完整注释
+        if (info.comment != null && info.comment.length() != 0) {
+            content.append(info.comment).append("\n\n");
         }
+        content.append("\n\n").append(info.sign);
+        XMindUtils.setNote(workbook, memberTopic, content.toString());
+
         LinkedHashMap<String, ITopic> map =
-                memberMap.computeIfAbsent(info.memberType, k -> new LinkedHashMap<>());
+                currMemberMap.computeIfAbsent(info.memberType, k -> new LinkedHashMap<>());
         map.put(info.sign, memberTopic);
     }
 

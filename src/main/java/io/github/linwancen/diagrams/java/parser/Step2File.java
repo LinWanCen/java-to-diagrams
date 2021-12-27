@@ -43,7 +43,8 @@ class Step2File {
                     packComments.add(packCommentMap.get(packageName));
                 }));
         String srcPath = SolverUtils.srcPath(file, packNames.size());
-        LOG.info("parseFile\t{}", file.getAbsolutePath().substring(srcPath.length() + 1));
+        String filePath = file.getAbsolutePath().substring(srcPath.length() + 1);
+        LOG.info("parseFile\t{}", filePath);
         if ("package-info.java".equals(file.getName())) {
             cu.getComment().ifPresent(comment -> {
                 String packageName = packNames.get(0);

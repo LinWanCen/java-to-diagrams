@@ -8,6 +8,8 @@ import org.xmind.core.util.Point;
 
 public class XMindUtils {
 
+    private XMindUtils() {}
+
     @SuppressWarnings("SpellCheckingInspection")
     public static final String XMIND = "xmind";
 

@@ -31,7 +31,8 @@ public class FileUtils {
         String path = ClassLoader.getSystemClassLoader().getResource("").getPath();
         try {
             path = URLDecoder.decode(path, "UTF-8");
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            LOG.error("path = URLDecoder.decode(path, \"UTF-8\"); path :\t{}", path, e);
         }
         CLASS_PATH = path;
     }

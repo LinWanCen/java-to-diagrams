@@ -9,6 +9,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class MavenUtils {
+
+    private MavenUtils() {}
+
     private static final Logger LOG = LoggerFactory.getLogger(MavenUtils.class);
 
     static {

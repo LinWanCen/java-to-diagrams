@@ -70,6 +70,7 @@ public class MemberInfo extends JavaInfo {
     /** 返回注释 */
     public String returnComment;
 
+    @Override
     protected void logCommentFirst() {
         LOG.warn("commentGenFirst fail:\n{}.{}({}.java:1) \n{}", typeInfo.sign, name, typeInfo.name, comment);
     }

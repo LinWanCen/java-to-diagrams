@@ -4,6 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CommentUtils {
+
+    private CommentUtils() {}
+
     private static final Pattern COMMENT_FIRST_PATTERN = Pattern.compile(
             "^[^\r\n]*");
 

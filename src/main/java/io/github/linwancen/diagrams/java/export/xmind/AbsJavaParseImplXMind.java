@@ -18,10 +18,12 @@ public abstract class AbsJavaParseImplXMind implements JavaParse {
 
     protected final File outDir;
     protected final String outName;
+    protected final String tipName;
 
-    public AbsJavaParseImplXMind(File outDir, String outName) {
+    protected AbsJavaParseImplXMind(File outDir, String outName, String tipName) {
         this.outDir = outDir;
         this.outName = outName;
+        this.tipName = tipName;
     }
 
     protected final IWorkbookBuilder workbookBuilder = Core.getWorkbookBuilder();
@@ -41,16 +43,11 @@ public abstract class AbsJavaParseImplXMind implements JavaParse {
             // 后缀大小写不对会导致打开软件没打开文件
             String path = new File(outDir, outName + "." + XMindUtils.XMIND).getCanonicalPath();
             workbook.save(path);
-            LOG.info("思维导图/脑图：{}\tfile:///{}", tipName(), path.replace('\\', '/'));
+            LOG.info("思维导图/脑图：{}\tfile:///{}", tipName, path.replace('\\', '/'));
         } catch (Exception e) {
             LOG.error("save fail, ", e);
         }
     }
-
-    /**
-     * 图形名字
-     */
-    protected abstract String tipName();
 
     /**
      * 保存前处理

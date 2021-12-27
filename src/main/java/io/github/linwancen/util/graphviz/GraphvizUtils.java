@@ -107,8 +107,8 @@ public class GraphvizUtils {
                 for (Format format : formats) {
                     file = new File(dir, name + "." + format.fileExtension);
                     graph.render(format).toFile(file);
-                    LOGGER.info("{} {} 格式：\tfile:///{}",
-                            tip, format.fileExtension, file.getAbsolutePath().replace('\\', '/'));
+                    String path = file.getAbsolutePath().replace('\\', '/');
+                    LOGGER.info("{} {} 格式：\tfile:///{}", tip, format.fileExtension, path);
                 }
             } catch (IOException e) {
                 LOGGER.info(file.getAbsolutePath(), e);

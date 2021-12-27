@@ -6,8 +6,6 @@ import io.github.linwancen.diagrams.java.api.bean.TypeInfo;
 import io.github.linwancen.diagrams.java.api.dict.MemberEnum;
 import io.github.linwancen.util.java.FilterUtils;
 import io.github.linwancen.util.xmind.XMindUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmind.core.ITopic;
 import org.xmind.core.style.IStyle;
 
@@ -23,12 +21,7 @@ import java.util.regex.Pattern;
 public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
 
     public JavaParseImplXMindCall(File outDir, String outName) {
-        super(outDir, outName + "_call");
-    }
-
-    @Override
-    protected String tipName() {
-        return "调用树";
+        super(outDir, outName + "_call", "调用树");
     }
 
     /**
@@ -52,11 +45,7 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
 
     private ITopic topicFrom(MemberInfo info) {
         // 暂时跳过这些无关紧要的
-        if (info.memberType == MemberEnum.STATIC) {
-            return null;
-        } else if (info.memberType == MemberEnum.FIELD) {
-            return null;
-        } else if (info.memberType == MemberEnum.GET_SET) {
+        if (info.memberType == MemberEnum.STATIC || info.memberType == MemberEnum.FIELD || info.memberType == MemberEnum.GET_SET) {
             return null;
         }
         if (!FilterUtils.filter(info.sign, includeMethod, excludeMethod)) {
@@ -159,7 +148,7 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
         alone.setTitleText("独立节点\nalone");
         alone.setFolded(true);
         for (ITopic t : rootTopic.getAllChildren()) {
-            if (t.getAllChildren().size() == 0) {
+            if (t.getAllChildren().isEmpty()) {
                 alone.add(t);
             }
         }

@@ -4,8 +4,6 @@ import org.apache.maven.shared.invoker.InvocationOutputHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-
 /**
  * 获取依赖清单
  */
