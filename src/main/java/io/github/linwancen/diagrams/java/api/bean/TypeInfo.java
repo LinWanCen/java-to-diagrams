@@ -1,8 +1,17 @@
 package io.github.linwancen.diagrams.java.api.bean;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
+/**
+ * @author 林万程
+ * @author linwancheng
+ */
 public class TypeInfo extends JavaInfo {
+    /** 作者 */
+    public List<String> author = new ArrayList<>();
+
     /** 成员 */
     public LinkedHashMap<String, MemberInfo> memberInfo = new LinkedHashMap<>();
 

@@ -22,8 +22,6 @@ import java.util.regex.Pattern;
  */
 public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
 
-    private static final Logger LOG = LoggerFactory.getLogger(JavaParseImplXMindCall.class);
-
     public JavaParseImplXMindCall(File outDir, String outName) {
         super(outDir, outName + "_call");
     }
@@ -81,11 +79,29 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
             text.append("()");
         }
         iTopic.setTitleText(text.toString());
-        String content = info.className();
-        if (info.commentFirst != null) {
-            content += "\n" + info.comment;
+        StringBuilder content = new StringBuilder();
+        // 类注释
+        if (info.typeInfo.comment != null) {
+            content.append(info.typeInfo.comment).append("\n\n");
         }
-        XMindUtils.setNote(workbook, iTopic, content);
+        // 作者
+        if (!info.typeInfo.author.isEmpty()) {
+            content.append(String.join("\n", info.typeInfo.author)).append("\n\n");
+        }
+        // 类名
+        content.append(info.className());
+        // 完整注释
+        if (info.comment != null) {
+            content.append("\n\n").append(info.comment);
+        }
+        // 全限定名
+        content.append("\n\n").append(info.sign);
+        // 特殊参数名
+        String simpleParamNamesStr = info.simpleParamNamesStr();
+        if (simpleParamNamesStr != null) {
+            content.append("\n\n").append(simpleParamNamesStr);
+        }
+        XMindUtils.setNote(workbook, iTopic, content.toString());
         return iTopic;
     }
 

@@ -54,7 +54,7 @@ public class XMindUtils {
     }
 
     /**
-     * 添加笔记
+     * 设置笔记
      */
     public static void setNote(IWorkbook workbook, ITopic iTopic, String content) {
         IPlainNotesContent plainContent = (IPlainNotesContent) workbook.createNotesContent(INotes.PLAIN);

@@ -95,6 +95,7 @@ class InfoUtils {
 
         type.getJavadoc().ifPresent(v -> {
             info.comment = CommentUtils.textFrom(v.getDescription().toText());
+            info.author = JavadocUtils.tagComments(v, JavadocBlockTag.Type.AUTHOR, null);
             info.genCommentFirst();
             Consumer<JavaInfo> copyComment = copyComment(info);
             info.implInfo.values().forEach(copyComment);

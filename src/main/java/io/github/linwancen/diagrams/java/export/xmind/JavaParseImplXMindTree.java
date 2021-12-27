@@ -76,6 +76,17 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
         StringBuilder text = stringBuilderForm(typeInfo);
 
         typeTopic.setTitleText(text.toString());
+        // 完整注释
+        StringBuilder content = new StringBuilder();
+        if (typeInfo.comment != null) {
+            content.append(content).append("\n\n");
+        }
+        if (!typeInfo.author.isEmpty()) {
+            content.append(String.join("\n", typeInfo.author));
+        }
+        if (content.length() > 0) {
+            XMindUtils.setNote(workbook, typeTopic, content.toString());
+        }
         typeTopic.setFolded(true);
         if (packs.size() > 0) {
             packageMap.get(packs.get(0)).add(typeTopic);
@@ -121,6 +132,9 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
             memberText.append("()");
         }
         memberTopic.setTitleText(memberText.toString());
+        if (info.comment != null) {
+            XMindUtils.setNote(workbook, memberTopic, info.comment);
+        }
         LinkedHashMap<String, ITopic> map =
                 memberMap.computeIfAbsent(info.memberType, k -> new LinkedHashMap<>());
         map.put(info.sign, memberTopic);
