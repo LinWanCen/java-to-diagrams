@@ -91,7 +91,7 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
         // 类名
         content.append(info.className());
         // 完整注释
-        if (info.comment != null) {
+        if (info.comment != null && info.comment.length() != 0) {
             content.append("\n\n").append(info.comment);
         }
         // 全限定名

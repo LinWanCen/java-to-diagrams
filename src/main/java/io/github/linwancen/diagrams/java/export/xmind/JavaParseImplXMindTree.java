@@ -76,17 +76,20 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
         StringBuilder text = stringBuilderForm(typeInfo);
 
         typeTopic.setTitleText(text.toString());
-        // 完整注释
+
         StringBuilder content = new StringBuilder();
-        if (typeInfo.comment != null) {
-            content.append(content).append("\n\n");
+        // 完整注释
+        if (typeInfo.comment != null && typeInfo.comment.length() != 0) {
+            content.append(typeInfo.comment).append("\n\n");
         }
+        // 作者
         if (!typeInfo.author.isEmpty()) {
-            content.append(String.join("\n", typeInfo.author));
+            content.append(String.join("\n", typeInfo.author)).append("\n\n");
         }
-        if (content.length() > 0) {
-            XMindUtils.setNote(workbook, typeTopic, content.toString());
-        }
+        // 全限定名
+        content.append(typeInfo.sign);
+        XMindUtils.setNote(workbook, typeTopic, content.toString());
+
         typeTopic.setFolded(true);
         if (packs.size() > 0) {
             packageMap.get(packs.get(0)).add(typeTopic);
