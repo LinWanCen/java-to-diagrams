@@ -1,13 +1,11 @@
 package io.github.linwancen.diagrams.java.parser;
 
 import com.github.javaparser.ast.AccessSpecifier;
-import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.TypeDeclaration;
 import com.github.javaparser.resolution.MethodUsage;
 import com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration;
 import com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration;
 import com.github.javaparser.resolution.types.ResolvedReferenceType;
-import com.github.javaparser.resolution.types.ResolvedType;
 import io.github.linwancen.diagrams.java.api.JavaParse;
 import io.github.linwancen.diagrams.java.api.bean.MemberInfo;
 import io.github.linwancen.diagrams.java.api.bean.TypeInfo;
@@ -55,26 +53,28 @@ class Step6Over {
                 overTypeInfo.parentInfo = parentTypeInfo;
                 parentTypeInfo.childInfo.put(overTypeInfo.sign, overTypeInfo);
             }
-            for (MethodUsage dm : parent.getDeclaredMethods()) {
-                ResolvedMethodDeclaration r = dm.getDeclaration();
+            for (MethodUsage usage : parent.getDeclaredMethods()) {
+                ResolvedMethodDeclaration parentMethod = usage.getDeclaration();
                 // 私有方法不会被重写
-                if (AccessSpecifier.PRIVATE == r.accessSpecifier()) {
+                if (AccessSpecifier.PRIVATE == parentMethod.accessSpecifier()) {
                     continue;
                 }
                 // 查找当前类是否有同签名的重写方法
-                String[] paramTypes = dm.getParamTypes().stream()
-                        .map(ResolvedType::describe)
-                        .map(s -> s.substring(s.lastIndexOf(".") + 1))
-                        .toArray(String[]::new);
-                List<MethodDeclaration> methods = type.getMethodsBySignature(dm.getName(), paramTypes);
-                if (methods.isEmpty()) {
+                ResolvedMethodDeclaration overMethod = null;
+                for (ResolvedMethodDeclaration m : type.resolve().getDeclaredMethods()) {
+                    if (parentMethod.getSignature().equals(m.getSignature())) {
+                        overMethod = m;
+                        break;
+                    }
+                }
+                if (overMethod == null) {
                     // TODO 跨级串接
                     continue;
                 }
                 // 重写的方法
-                MemberInfo overInfo = InfoFactory.getOrCreateMemberInfo(overTypeInfo, methods.get(0).resolve());
+                MemberInfo overInfo = InfoFactory.getOrCreateMemberInfo(overTypeInfo, overMethod);
                 // 父类或实现类方法
-                MemberInfo parentInfo = InfoFactory.getOrCreateMemberInfo(parentTypeInfo, r);
+                MemberInfo parentInfo = InfoFactory.getOrCreateMemberInfo(parentTypeInfo, parentMethod);
                 if (overInfo.comment == null && parentInfo.comment != null) {
                     overInfo.comment = parentInfo.comment;
                     overInfo.commentFirst = parentInfo.commentFirst;
