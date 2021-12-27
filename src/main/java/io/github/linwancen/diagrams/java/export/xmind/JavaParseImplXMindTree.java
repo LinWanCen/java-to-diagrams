@@ -144,7 +144,7 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
      * 空实现
      */
     @Override
-    public void call(MemberInfo usageInfo, MemberInfo callInfo) {
+    public void call(MemberInfo usage, MemberInfo call) {
     }
 
     /**

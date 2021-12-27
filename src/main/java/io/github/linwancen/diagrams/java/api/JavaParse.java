@@ -17,7 +17,7 @@ public interface JavaParse {
     void member(MemberInfo info);
 
     /** 方法调用关系处理 */
-    void call(MemberInfo usageInfo, MemberInfo callInfo);
+    void call(MemberInfo usage, MemberInfo call);
 
     /** 继承关系处理 */
     void extend(MemberInfo child, MemberInfo parent);

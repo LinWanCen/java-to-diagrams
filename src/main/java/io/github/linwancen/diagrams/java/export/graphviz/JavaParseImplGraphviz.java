@@ -96,8 +96,8 @@ public class JavaParseImplGraphviz implements JavaParse {
      * 保存调用关系
      */
     @Override
-    public void call(MemberInfo usageInfo, MemberInfo callInfo) {
-        usageCallList.add(new MemberInfo[]{usageInfo, callInfo});
+    public void call(MemberInfo usage, MemberInfo call) {
+        usageCallList.add(new MemberInfo[]{usage, call});
     }
 
     private final List<MemberInfo[]> extendList = new ArrayList<>();
