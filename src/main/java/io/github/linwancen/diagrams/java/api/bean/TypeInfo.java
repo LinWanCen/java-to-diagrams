@@ -10,7 +10,11 @@ import java.util.List;
  */
 public class TypeInfo extends JavaInfo {
     /** 作者 */
-    public List<String> author = new ArrayList<>();
+    public List<String> authorList = new ArrayList<>();
+
+    public String getAuthor() {
+        return String.join("\n", authorList);
+    }
 
     /** 成员 */
     public LinkedHashMap<String, MemberInfo> memberInfo = new LinkedHashMap<>();

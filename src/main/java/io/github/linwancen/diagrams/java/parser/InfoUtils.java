@@ -1,6 +1,7 @@
 package io.github.linwancen.diagrams.java.parser;
 
 import com.github.javaparser.ast.body.*;
+import com.github.javaparser.ast.nodeTypes.NodeWithRange;
 import com.github.javaparser.javadoc.Javadoc;
 import com.github.javaparser.javadoc.JavadocBlockTag;
 import com.github.javaparser.resolution.declarations.*;
@@ -93,14 +94,20 @@ class InfoUtils {
         info.isStatic = type.isStatic();
         info.access = AccessEnumUtils.toEnum(type.getAccessSpecifier());
 
+        addLine(info, type);
+
         type.getJavadoc().ifPresent(v -> {
             info.comment = CommentUtils.textFrom(v.getDescription().toText());
-            info.author = JavadocUtils.tagComments(v, JavadocBlockTag.Type.AUTHOR, null);
-            info.genCommentFirst();
+            info.authorList = JavadocUtils.tagComments(v, JavadocBlockTag.Type.AUTHOR, null);
+            info.commentLines = CommentUtils.splitToLines(info.comment);
             Consumer<JavaInfo> copyComment = copyComment(info);
             info.implInfo.values().forEach(copyComment);
             info.childInfo.values().forEach(copyComment);
         });
+    }
+
+    static void addLine(JavaInfo info, NodeWithRange<?> node) {
+        node.getRange().ifPresent(p -> info.lineCount = p.getLineCount());
     }
 
     /**
@@ -110,7 +117,7 @@ class InfoUtils {
         return overInfo -> {
             if (overInfo.comment == null) {
                 overInfo.comment = info.comment;
-                overInfo.commentFirst = info.commentFirst;
+                overInfo.commentLines = info.commentLines;
             }
         };
     }
@@ -135,7 +142,7 @@ class InfoUtils {
         info.access = AccessEnumUtils.toEnum(d.getAccessSpecifier());
 
         d.getJavadoc().ifPresent(v -> info.comment = CommentUtils.textFrom(v.getDescription().toText()));
-        info.genCommentFirst();
+        info.commentLines = CommentUtils.splitToLines(info.comment);
     }
 
     /**
@@ -190,10 +197,12 @@ class InfoUtils {
             info.isAbstract = d.isAbstract();
         }
 
+        addLine(info, d);
+
         Optional<Javadoc> javadoc = d.getJavadoc();
         javadoc.ifPresent(v -> {
             info.comment = CommentUtils.textFrom(v.getDescription().toText());
-            info.genCommentFirst();
+            info.commentLines = CommentUtils.splitToLines(info.comment);
             Consumer<JavaInfo> copyComment = copyComment(info);
             info.implInfo.values().forEach(copyComment);
             info.childInfo.values().forEach(copyComment);
@@ -219,7 +228,7 @@ class InfoUtils {
             javadoc.ifPresent(v -> {
                 info.returnComment = JavadocUtils.tagComment(v, JavadocBlockTag.Type.RETURN, null);
                 info.returnComment = CommentUtils.textFrom(info.returnComment);
-                info.genCommentFirst();
+                info.commentLines = CommentUtils.splitToLines(info.comment);
                 Consumer<MemberInfo> copyComment = overInfo -> {
                     if (overInfo.returnComment == null) {
                         overInfo.returnComment = info.returnComment;

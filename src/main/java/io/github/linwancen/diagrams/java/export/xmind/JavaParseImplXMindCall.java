@@ -53,9 +53,7 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
         }
         ITopic iTopic = workbook.createTopic();
         StringBuilder text = new StringBuilder();
-        if (info.commentFirst != null) {
-            text.append(info.commentFirst);
-        }
+        text.append(info.getCommentNotNull(0));
         text.append("\n");
         if (showSymbol) {
             text.append(info.typeInfo.type.symbol).append(info.modSymbol());
@@ -74,8 +72,8 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
             content.append(info.typeInfo.comment).append("\n\n");
         }
         // 作者
-        if (!info.typeInfo.author.isEmpty()) {
-            content.append(String.join("\n", info.typeInfo.author)).append("\n\n");
+        if (!info.typeInfo.authorList.isEmpty()) {
+            content.append(info.typeInfo.getAuthor()).append("\n\n");
         }
         // 类名
         content.append(info.className());
@@ -85,6 +83,8 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
         }
         // 全限定名
         content.append("\n\n").append(info.sign);
+        // 行数
+        content.append("\n\n").append(info.lineCount);
         // 特殊参数名
         String simpleParamNamesStr = info.simpleParamNamesStr();
         if (simpleParamNamesStr != null) {

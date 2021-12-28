@@ -27,6 +27,13 @@
       <version>0.18.1</version>
     </dependency>
 
+    <!-- Excel 生成 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>easyexcel</artifactId>
+      <version>3.0.5</version>
+    </dependency>
+
     <!-- java 解析  -->
     <dependency>
       <groupId>com.github.javaparser</groupId>

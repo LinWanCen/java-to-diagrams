@@ -1,9 +1,5 @@
 package io.github.linwancen.diagrams.java.api.bean;
 
-import io.github.linwancen.util.java.CommentUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,13 +17,15 @@ public class JavaInfo extends ModifiersInfo {
     public String lowFirstName;
 
     /** 首句注释 */
-    public String commentFirst;
+    public String[] commentLines;
     /** 全部注释 */
     public String comment;
 
     /** 是否选择的文件 */
     public boolean isSelect;
 
+    /** 结束行 */
+    public int lineCount;
 
     /**
      * 生成首字母小写简称
@@ -36,27 +34,24 @@ public class JavaInfo extends ModifiersInfo {
         lowFirstName = name.substring(0, 1).toLowerCase() + name.substring(1);
     }
 
-
-    private static final Logger LOG = LoggerFactory.getLogger(JavaInfo.class);
-
-    /**
-     * 截取注释第一句
-     */
-    public void genCommentFirst() {
-        if (comment == null) {
-            commentFirst = "";
-            return;
+    public String getComment(int index) {
+        if (commentLines != null && commentLines.length > index) {
+            return commentLines[index];
         }
-        String firstComment = CommentUtils.firstComment(comment);
-        if (firstComment != null) {
-            commentFirst = firstComment;
-        } else {
-            logCommentFirst();
-            commentFirst = comment;
-        }
+        return null;
     }
 
-    protected void logCommentFirst() {
-        LOG.warn("commentGenFirst fail:\n{}({}.java:1) \n{}", sign, name, comment);
+    public String getCommentNotNull(int index) {
+        if (commentLines != null && commentLines.length > index) {
+            return commentLines[index];
+        }
+        return "";
+    }
+
+    public String getCommentLine(int index) {
+        if (commentLines != null && commentLines.length > index) {
+            return commentLines[index] + "\n";
+        }
+        return "";
     }
 }

@@ -89,4 +89,14 @@ public class FileUtils {
             return path;
         }
     }
+
+    /**
+     * 避免没有文件夹报错
+     */
+    public static void mkdir(File dir) {
+        if (dir != null && !dir.exists() && dir.mkdirs()) {
+            String path = canonicalPath(dir);
+            LOG.debug("mkdir fail\tfile:///{}", path);
+        }
+    }
 }

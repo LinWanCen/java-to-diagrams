@@ -1,24 +1,21 @@
 package io.github.linwancen.util.java;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CommentUtils {
 
     private CommentUtils() {}
 
-    private static final Pattern COMMENT_FIRST_PATTERN = Pattern.compile(
-            "^[^\r\n]*");
+    private static final Pattern LINE_PATTERN = Pattern.compile(" *[\r\n]+ *");
 
     /**
-     * 首行注释
+     * 切割注释并 trim
      */
-    public static String firstComment(String comment) {
-        Matcher m = COMMENT_FIRST_PATTERN.matcher(comment);
-        if (m.find()) {
-            return m.group();
+    public static String[] splitToLines(String comment) {
+        if (comment == null) {
+            return new String[0];
         }
-        return null;
+        return LINE_PATTERN.split(comment);
     }
 
     private static final Pattern BR_PATTERN = Pattern.compile("[\r\n]{0,2}</?[^>]++/?>[\r\n]{0,2}");

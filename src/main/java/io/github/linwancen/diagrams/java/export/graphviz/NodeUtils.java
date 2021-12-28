@@ -22,11 +22,10 @@ class NodeUtils {
      */
     static String[] methodRecords(MemberInfo info) {
         ArrayList<String> list = new ArrayList<>();
-        String commentFirst = info.returnComment == null ? "" : info.commentFirst;
         String returnComment = info.returnComment == null || "".equals(info.returnComment)
                 ? ""
                 : " : " + info.returnComment;
-        String comment = commentFirst + returnComment;
+        String comment = info.getCommentNotNull(0) + returnComment;
         if (comment.trim().length() > 0) {
             list.add(GraphvizUtils.label(GraphvizUtils.escape(comment)));
         }

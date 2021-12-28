@@ -26,9 +26,9 @@ public class JavaParseImplGraphviz implements JavaParse {
 
     private final LinkedHashMap<String, LinkedHashMap<String, Node>> typeMethodMap = new LinkedHashMap<>();
 
-    public Rank.RankDir rankDir = Rank.RankDir.valueOf(Conf.DIAGRAMS_DOT_DIR.get());
+    private final Rank.RankDir rankDir = Rank.RankDir.valueOf(Conf.DIAGRAMS_DOT_DIR.get());
 
-    public Graph g = GraphvizUtils.initWithFont(rankDir, "");
+    private Graph g = GraphvizUtils.initWithFont(rankDir, "");
 
     public final File outDir;
     public final String outName;
@@ -52,8 +52,7 @@ public class JavaParseImplGraphviz implements JavaParse {
         if (cluster != null) {
             g = g.with(cluster);
         }
-        String classComment = typeInfo.commentFirst == null ? "" : typeInfo.commentFirst + "\n";
-        String text = classComment + typeInfo.modSymbol() + typeInfo.sign;
+        String text = typeInfo.getCommentLine(0) + typeInfo.modSymbol() + typeInfo.sign;
         text = GraphvizUtils.escape(text);
         cluster = graph(typeInfo.sign + "_C")
                 .cluster()

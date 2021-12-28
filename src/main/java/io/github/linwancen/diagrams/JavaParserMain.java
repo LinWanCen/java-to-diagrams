@@ -1,6 +1,7 @@
 package io.github.linwancen.diagrams;
 
 import io.github.linwancen.diagrams.java.api.JavaParse;
+import io.github.linwancen.diagrams.java.export.excel.JavaParseImplExcel;
 import io.github.linwancen.diagrams.java.export.graphviz.JavaParseImplGraphviz;
 import io.github.linwancen.diagrams.java.export.xmind.JavaParseImplXMindCall;
 import io.github.linwancen.diagrams.java.export.xmind.JavaParseImplXMindTree;
@@ -12,8 +13,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -64,19 +67,18 @@ public class JavaParserMain {
                     .map(File::getName)
                     .collect(Collectors.joining("+"));
         }
+        SimpleDateFormat sdf = new SimpleDateFormat("_yyyy-MM-dd_HH.mm.ss");
+        outName += sdf.format(new Date());
         outName += Conf.DIAGRAMS_OUT_SUFFIX.get();
 
         File outDir = new File(FileUtils.CLASS_PATH, outName);
-        boolean mkdir = outDir.mkdir();
-        if (!mkdir) {
-            LOG.error("mkdir fail: {}", outDir.getAbsolutePath());
-            return;
-        }
+        FileUtils.mkdir(outDir);
 
         List<JavaParse> parsers = new ArrayList<>();
         add(parsers, Conf.DIAGRAMS_XMIND_TREE, new JavaParseImplXMindTree(outDir, outName));
         add(parsers, Conf.DIAGRAMS_XMIND_CALL, new JavaParseImplXMindCall(outDir, outName));
         add(parsers, Conf.DIAGRAMS_DOT, new JavaParseImplGraphviz(outDir, outName));
+        add(parsers, Conf.DIAGRAMS_EXCEL, new JavaParseImplExcel(outDir, outName));
 
         Step1Dirs.parseDirs(parsers, files);
 

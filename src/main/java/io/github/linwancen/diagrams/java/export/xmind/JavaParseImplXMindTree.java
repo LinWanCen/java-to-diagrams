@@ -78,11 +78,13 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
             content.append(typeInfo.comment).append("\n\n");
         }
         // 作者
-        if (!typeInfo.author.isEmpty()) {
-            content.append(String.join("\n", typeInfo.author)).append("\n\n");
+        if (!typeInfo.authorList.isEmpty()) {
+            content.append(typeInfo.getAuthor()).append("\n\n");
         }
         // 全限定名
-        content.append(typeInfo.sign);
+        content.append(typeInfo.sign).append("\n\n");
+        // 行数
+        content.append("\n\n").append(typeInfo.lineCount);
         XMindUtils.setNote(workbook, typeTopic, content.toString());
 
         typeTopic.setFolded(true);
@@ -102,9 +104,7 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
      */
     private StringBuilder stringBuilderForm(JavaInfo typeInfo) {
         StringBuilder text = new StringBuilder();
-        if (typeInfo.commentFirst != null) {
-            text.append(typeInfo.commentFirst);
-        }
+        text.append(typeInfo.getCommentNotNull(0));
         text.append("\n");
         if (showSymbol) {
             text.append(typeInfo.modSymbol());
@@ -136,7 +136,10 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
         if (info.comment != null && info.comment.length() != 0) {
             content.append(info.comment).append("\n\n");
         }
+        // 全限定名
         content.append("\n\n").append(info.sign);
+        // 行数
+        content.append("\n\n").append(info.lineCount);
         XMindUtils.setNote(workbook, memberTopic, content.toString());
 
         LinkedHashMap<String, ITopic> map =

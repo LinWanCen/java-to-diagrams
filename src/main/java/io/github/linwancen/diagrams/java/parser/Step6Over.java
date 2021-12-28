@@ -43,7 +43,7 @@ class Step6Over {
                 typeMap.put(parentTypeSign, parentTypeInfo);
                 if (overTypeInfo.comment == null && parentTypeInfo.comment != null) {
                     overTypeInfo.comment = parentTypeInfo.comment;
-                    overTypeInfo.commentFirst = parentTypeInfo.commentFirst;
+                    overTypeInfo.commentLines = parentTypeInfo.commentLines;
                 }
             }
             if (isImpl) {
@@ -77,7 +77,7 @@ class Step6Over {
                 MemberInfo parentInfo = InfoFactory.getOrCreateMemberInfo(parentTypeInfo, parentMethod);
                 if (overInfo.comment == null && parentInfo.comment != null) {
                     overInfo.comment = parentInfo.comment;
-                    overInfo.commentFirst = parentInfo.commentFirst;
+                    overInfo.commentLines = parentInfo.commentLines;
                 }
                 if (isImpl) {
                     javaParses.forEach(v -> v.impl(overInfo, parentInfo));

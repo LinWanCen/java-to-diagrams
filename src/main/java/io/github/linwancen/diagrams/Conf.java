@@ -45,6 +45,8 @@ public enum Conf {
     /** 生成文件后缀 */
     DIAGRAMS_OUT_SUFFIX("diagrams_out_suffix", "_code_diagrams"),
 
+    /** 表格 */
+    DIAGRAMS_EXCEL("diagrams_excel", "true"),
 
     // region 关系图
 
