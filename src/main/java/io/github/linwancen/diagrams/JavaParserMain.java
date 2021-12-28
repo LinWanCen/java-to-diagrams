@@ -55,10 +55,8 @@ public class JavaParserMain {
      * 组装生成器
      */
     protected static void run(File... files) {
-        File outDir = new File(FileUtils.CLASS_PATH);
-
         String outName;
-        if (files.length == 1) {
+        if (files.length == 1 || files[0].isFile()) {
             outName = files[0].getAbsoluteFile().getName();
         } else {
             outName = Arrays.stream(files)
@@ -67,6 +65,13 @@ public class JavaParserMain {
                     .collect(Collectors.joining("+"));
         }
         outName += Conf.DIAGRAMS_OUT_SUFFIX.get();
+
+        File outDir = new File(FileUtils.CLASS_PATH, outName);
+        boolean mkdir = outDir.mkdir();
+        if (!mkdir) {
+            LOG.error("mkdir fail: {}", outDir.getAbsolutePath());
+            return;
+        }
 
         List<JavaParse> parsers = new ArrayList<>();
         add(parsers, Conf.DIAGRAMS_XMIND_TREE, new JavaParseImplXMindTree(outDir, outName));
