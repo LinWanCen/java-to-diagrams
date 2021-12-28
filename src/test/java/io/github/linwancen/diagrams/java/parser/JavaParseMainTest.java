@@ -11,9 +11,9 @@ public class JavaParseMainTest {
      */
     @Test
     public void test() {
-        // 解析路径 分隔符 Windows ; Mac/Linux :
+        // 解析路径 分隔符 \r 或 \n 或 Windows ; Mac/Linux :
         // 这里也可以设置多个字符串
-        // IDEA 可以选中文件夹 Ctrl + Shift + C 复制路径
+        // IDEA 可以选中多个文件或文件夹 Ctrl + Shift + C 复制路径
         // IDEA 粘贴到这里会自动转义，如果不喜欢转义可以设置环境变量 parser_path
         JavaParserMain.main("");
     }

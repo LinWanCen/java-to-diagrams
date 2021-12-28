@@ -20,7 +20,7 @@ public class FileUtils {
 
     public static final String CLASS_PATH;
 
-    public static final Pattern PATH_PATTERN = Pattern.compile(File.pathSeparator);
+    public static final Pattern PATH_PATTERN = Pattern.compile("[" + File.pathSeparator + "\r\n]+");
 
     public static String[] split(String paths) {
         return PATH_PATTERN.split(paths);
