@@ -31,6 +31,7 @@ class Step5MethodCall {
         for (MethodCallExpr expr : m.findAll(MethodCallExpr.class)) {
             ResolvedMethodDeclaration r;
             try {
+                // 代码调用次数越多，源码量越多，这里花的时间越多
                 r = expr.resolve();
             } catch (Exception e) {
                 // FIXME 目前已知解析失败：静态引用，::调用

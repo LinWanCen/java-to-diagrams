@@ -1,6 +1,5 @@
 package io.github.linwancen.diagrams.java.parser;
 
-import io.github.linwancen.diagrams.Conf;
 import io.github.linwancen.diagrams.JavaParserMain;
 import org.testng.annotations.Test;
 

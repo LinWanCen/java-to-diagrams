@@ -43,7 +43,8 @@ public abstract class AbsJavaParseImplXMind implements JavaParse {
             // 后缀大小写不对会导致打开软件没打开文件
             String path = new File(outDir, outName + "." + XMindUtils.XMIND).getCanonicalPath();
             workbook.save(path);
-            LOG.info("思维导图/脑图：{}\tfile:///{}", tipName, path.replace('\\', '/'));
+            path = path.replace('\\', '/');
+            LOG.info("思维导图/脑图：{}\tfile:///{}", tipName, path);
         } catch (Exception e) {
             LOG.error("save fail, ", e);
         }

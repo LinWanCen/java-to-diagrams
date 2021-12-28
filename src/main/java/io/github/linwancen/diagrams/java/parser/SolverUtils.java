@@ -38,7 +38,6 @@ class SolverUtils {
      */
     static void addSolverParentSrcDir(CombinedTypeSolver solver, Set<String> addSrc, String srcPath) {
         if (addSrc.add(srcPath)) {
-            LOG.info("addSolverDir\t{}", srcPath);
             addSolverDir(solver, srcPath);
         }
     }
@@ -47,16 +46,28 @@ class SolverUtils {
      * 添加源文件根目录
      */
     static void addSolverDir(CombinedTypeSolver solver, String srcRootDir) {
+        LOG.info("addSolverDir\t{}", srcRootDir);
+        long startTime = System.nanoTime();
+
         solver.add(new JavaParserTypeSolver(srcRootDir));
+
+        long useTime = (System.nanoTime() - startTime) / 1000000;
+        LOG.info("addSolverDir success, use {}ms", useTime);
     }
 
     /**
      * 添加用于解析的 Maven jar 包
      */
     static void addSolverMavenJars(CombinedTypeSolver solver, HashSet<String> addJars, File file) {
+        LOG.info("get Maven Dep\t{}", file.getAbsolutePath());
+        long startTime = System.nanoTime();
+
         String dep = MavenUtils.getDep(file);
+
+        long useTime = (System.nanoTime() - startTime) / 1000000;
+        LOG.info("get Maven Dep success, use {}ms", useTime);
+
         if (dep != null && addJars.add(dep)) {
-            LOG.info("addSolverJars\t{}", dep);
             addSolverJars(solver, dep);
         }
     }
@@ -67,6 +78,9 @@ class SolverUtils {
      * mvn dependency:build-classpath
      */
     static void addSolverJars(CombinedTypeSolver solver, String pathToJars) {
+        LOG.info("addSolverJars\t{}", pathToJars);
+        long startTime = System.nanoTime();
+
         JarTypeSolver jarTypeSolver;
         String[] pathToJarArr = FileUtils.split(pathToJars);
         for (String pathToJar : pathToJarArr) {
@@ -80,5 +94,8 @@ class SolverUtils {
                 LOG.error("addSolverJars fail, pathToJar:\n{}\n", pathToJar, e);
             }
         }
+
+        long useTime = (System.nanoTime() - startTime) / 1000000;
+        LOG.info("addSolverJars success, use {}ms", useTime);
     }
 }

@@ -23,7 +23,7 @@
 2. 添加 `Maven` 依赖
 3. 拷贝 [JavaParseMainTest.java](src/test/java/io/github/linwancen/diagrams/java/parser/JavaParseMainTest.java) 到项目中
 4. 拷贝 [conf.properties](src/main/resources/conf.properties) 到项目中，\
-   可以设置`parser_solver_auto`开头的两个选项为`false`
+   可以设置`parser_solver_auto`开头的两个选项为`false`，**大幅提升运行速度**
 5. 运行 JavaParseMainTest.java
 
 
