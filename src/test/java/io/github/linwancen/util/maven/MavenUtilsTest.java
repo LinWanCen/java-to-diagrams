@@ -10,7 +10,9 @@ public class MavenUtilsTest {
 
     @Test
     public void testGet() {
-        String output = MavenUtils.getDep(new File(""));
+        File file = new File("");
+        File pomFile = MavenUtils.parentPomFile(file);
+        String output = MavenUtils.getDep(pomFile);
         assertNotNull(output);
         System.out.println(output);
     }

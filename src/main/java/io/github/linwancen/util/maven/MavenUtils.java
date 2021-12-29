@@ -25,9 +25,9 @@ public class MavenUtils {
     /**
      * 获取依赖 jar
      */
-    public static String getDep(File path) {
+    public static String getDep(File pomFile) {
         DepHandler handler = new DepHandler();
-        run(parentPomFile(path), handler, Collections.singletonList("dependency:build-classpath"));
+        run(pomFile, handler, Collections.singletonList("dependency:build-classpath"));
         return handler.output;
     }
 

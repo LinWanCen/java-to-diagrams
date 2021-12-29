@@ -36,26 +36,27 @@ public class Step1Dirs {
         CombinedTypeSolver solver = new CombinedTypeSolver();
         // 类加载器必须添加以便获得 java 的
         solver.add(new ClassLoaderTypeSolver(ClassLoader.getSystemClassLoader()));
+        HashSet<String> addPoms = new HashSet<>();
+        HashSet<String> addJars = new HashSet<>();
+        HashSet<String> addSrc = new HashSet<>();
         // 加载设置的解析资源
         String src = Conf.DIAGRAMS_SOLVER_SRC.get();
         if (src.length() > 0) {
             for (String s : FileUtils.split(src)) {
-                SolverUtils.addSolverDir(solver, s);
+                SolverUtils.addSolverDir(solver, s, addSrc);
             }
         }
         String jar = Conf.DIAGRAMS_SOLVER_JAR.get();
         if (jar.length() > 0) {
-            SolverUtils.addSolverJars(solver, jar);
+            SolverUtils.addSolverJars(solver, jar, addJars);
         }
         JavaSymbolSolver symbolSolver = new JavaSymbolSolver(solver);
         StaticJavaParser.getConfiguration().setSymbolResolver(symbolSolver);
         LinkedHashMap<String, TypeInfo> typeMap = new LinkedHashMap<>();
         LinkedHashMap<String, String> packComment = new LinkedHashMap<>();
-        HashSet<String> addJars = new HashSet<>();
-        HashSet<String> addSrc = new HashSet<>();
         for (File file : files) {
             if ("true".equals(Conf.DIAGRAMS_SOLVER_AUTO_JAR.get())) {
-                SolverUtils.addSolverMavenJars(solver, addJars, file);
+                SolverUtils.addSolverMavenJars(solver, file, addPoms, addJars);
             }
             FileUtils.deep(
                     f -> {

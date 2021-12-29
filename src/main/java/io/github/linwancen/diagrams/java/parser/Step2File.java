@@ -53,7 +53,7 @@ class Step2File {
             });
         }
         if ("true".equals(Conf.DIAGRAMS_SOLVER_AUTO_SRC.get())) {
-            SolverUtils.addSolverParentSrcDir(solver, addSrc, srcPath);
+            SolverUtils.addSolverDir(solver, srcPath, addSrc);
         }
         for (TypeDeclaration<?> type : cu.getTypes()) {
             Step3Type.parseType(typeMap, javaParses, type, packNames, packComments);
