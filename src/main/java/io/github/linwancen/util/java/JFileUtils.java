@@ -10,7 +10,7 @@ public class JFileUtils {
     public static File[] chooser() {
         JFileChooser jFileChooser = new JFileChooser();
         jFileChooser.setMultiSelectionEnabled(true);
-        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        jFileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         File lastSelectFile = new File("lastSelectFile.txt");
         String pathName = lastSelectFile.exists() ? FileUtils.read(lastSelectFile) : "";
         jFileChooser.setCurrentDirectory(new File(pathName).getAbsoluteFile());
