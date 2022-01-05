@@ -27,7 +27,6 @@ class InfoFactory {
         info = new MemberInfo();
         // 获取或新建的
         info.typeInfo = typeInfo;
-        InfoUtils.addResolvedTypeInfo(info.typeInfo, rt);
         InfoUtils.addResolvedMethodInfo(info, r);
         InfoUtils.isGetSet(info, null, rt);
         typeInfo.memberInfo.put(sign, info);

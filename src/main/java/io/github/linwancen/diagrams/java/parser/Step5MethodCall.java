@@ -42,7 +42,11 @@ class Step5MethodCall {
             }
             ResolvedReferenceTypeDeclaration rt = r.declaringType();
             String callTypeSign = InfoUtils.resolvedTypeSign(rt);
-            TypeInfo callTypeInfo = typeMap.computeIfAbsent(callTypeSign, s -> new TypeInfo());
+            TypeInfo callTypeInfo = typeMap.computeIfAbsent(callTypeSign, s -> {
+                TypeInfo info = new TypeInfo();
+                InfoUtils.addResolvedTypeInfo(info, rt);
+                return info;
+            });
             MemberInfo callInfo = InfoFactory.getOrCreateMemberInfo(callTypeInfo, r);
 
             usageInfo.callInfo.put(callInfo.sign, callInfo);
