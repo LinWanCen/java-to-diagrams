@@ -72,7 +72,7 @@ public enum Conf {
 
     /** 思维导图显示类名 */
     @SuppressWarnings("SpellCheckingInspection")
-    DIAGRAMS_XMIND_CLASS("diagrams_xmind_class", "false"),
+    DIAGRAMS_XMIND_CLASS("diagrams_xmind_class", "true"),
 
     /** 思维导图显示标识符 */
     @SuppressWarnings("SpellCheckingInspection")

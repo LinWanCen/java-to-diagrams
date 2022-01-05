@@ -43,7 +43,7 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
     private final Pattern includeMethod = Pattern.compile(Conf.DIAGRAMS_XMIND_METHOD_INCLUDE.get());
     private final Pattern excludeMethod = Pattern.compile(Conf.DIAGRAMS_XMIND_METHOD_EXCLUDE.get());
 
-    private ITopic topicFrom(MemberInfo info) {
+    private ITopic topicFrom(MemberInfo info, boolean sameClassCall) {
         // 暂时跳过这些无关紧要的
         if (info.memberType == MemberEnum.STATIC || info.memberType == MemberEnum.FIELD || info.memberType == MemberEnum.GET_SET) {
             return null;
@@ -56,9 +56,9 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
         text.append(info.getCommentNotNull(0));
         text.append("\n");
         if (showSymbol) {
-            text.append(info.typeInfo.type.symbol).append(info.modSymbol());
+            text.append(info.typeInfo.type.symbol).append(info.modSymbol()).append(" ");
         }
-        if (showClass) {
+        if (showClass && !sameClassCall) {
             text.append(info.className()).append(".");
         }
         text.append(info.name);
@@ -129,17 +129,18 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
                 if (!FilterUtils.filter(info.sign, includeRoot, excludeRoot)) {
                     continue;
                 }
-                ITopic topic = topicFrom(info);
+                if (!info.usageInfo.isEmpty() || !info.faceInfo.isEmpty() || info.parentInfo != null) {
+                    continue;
+                }
+                ITopic topic = topicFrom(info, false);
                 // 调用方被省略（字段、静态）
                 if (topic == null) {
                     continue;
                 }
-                if (info.usageInfo.isEmpty() && info.faceInfo.isEmpty() && info.parentInfo == null) {
-                    rootTopic.add(topic);
-                    HashMap<String, ITopic> has = new HashMap<>();
-                    has.put(info.sign, topic);
-                    rel(has, topic, info);
-                }
+                rootTopic.add(topic);
+                HashMap<String, ITopic> has = new HashMap<>();
+                has.put(info.sign, topic);
+                rel(has, topic, info);
             }
         }
 
@@ -195,7 +196,8 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
             XMindUtils.addLink(usageTopic, hasTopic);
             return;
         }
-        ITopic callTopic = topicFrom(call);
+        boolean sameClassCall = usage.typeInfo.sign.equals(call.typeInfo.sign);
+        ITopic callTopic = topicFrom(call, sameClassCall);
         // 被筛选掉的方法跳过
         if (callTopic == null) {
             return;
