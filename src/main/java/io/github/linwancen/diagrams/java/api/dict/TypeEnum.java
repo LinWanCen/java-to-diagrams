@@ -1,7 +1,7 @@
 package io.github.linwancen.diagrams.java.api.dict;
 
 public enum TypeEnum {
-    CLAZZ("C", "class"),
+    CLAZZ("", "class"),
     INTERFACE("I", "interface"),
     ENUM("E", "enum"),
     ANNOTATION("@", "annotation"),
