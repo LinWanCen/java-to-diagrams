@@ -55,6 +55,8 @@ class InfoUtils {
         }
         if (rt instanceof HasAccessSpecifier) {
             info.access = AccessEnumUtils.toEnum(((HasAccessSpecifier) rt).accessSpecifier());
+        } else if (info.access == null) {
+            info.access = AccessEnum.UNKNOWN;
         }
     }
 

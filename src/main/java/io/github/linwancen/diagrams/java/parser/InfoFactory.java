@@ -28,6 +28,7 @@ class InfoFactory {
         // 获取或新建的
         info.typeInfo = typeInfo;
         InfoUtils.addResolvedMethodInfo(info, r);
+        info.memberType = MemberEnum.METHOD;
         InfoUtils.isGetSet(info, null, rt);
         typeInfo.memberInfo.put(sign, info);
         return info;
