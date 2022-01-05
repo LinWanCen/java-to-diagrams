@@ -20,15 +20,15 @@ public class TypeInfo extends JavaInfo {
     public LinkedHashMap<String, MemberInfo> memberInfo = new LinkedHashMap<>();
 
     /** 被调 */
-    public LinkedHashMap<String, JavaInfo> usageInfo = new LinkedHashMap<>();
+    public LinkedHashMap<String, TypeInfo> usageInfo = new LinkedHashMap<>();
     /** 调用 */
-    public LinkedHashMap<String, JavaInfo> callInfo = new LinkedHashMap<>();
+    public LinkedHashMap<String, TypeInfo> callInfo = new LinkedHashMap<>();
     /** 接口 */
-    public LinkedHashMap<String, JavaInfo> faceInfo = new LinkedHashMap<>();
+    public LinkedHashMap<String, TypeInfo> faceInfo = new LinkedHashMap<>();
     /** 实现 */
-    public LinkedHashMap<String, JavaInfo> implInfo = new LinkedHashMap<>();
+    public LinkedHashMap<String, TypeInfo> implInfo = new LinkedHashMap<>();
     /** 继承父 */
-    public JavaInfo parentInfo;
+    public TypeInfo parentInfo;
     /** 继承子 */
-    public LinkedHashMap<String, JavaInfo> childInfo = new LinkedHashMap<>();
+    public LinkedHashMap<String, TypeInfo> childInfo = new LinkedHashMap<>();
 }
