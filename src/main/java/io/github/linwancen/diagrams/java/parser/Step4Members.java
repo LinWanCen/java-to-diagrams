@@ -41,16 +41,18 @@ class Step4Members {
                 ResolvedMethodDeclaration r = d.resolve();
                 String sign = InfoUtils.methodSign(r);
                 info = typeInfo.memberInfo.computeIfAbsent(sign, s -> new MemberInfo());
+                // 为了修正接口方法默认共有所以先传
                 info.typeInfo = typeInfo;
                 InfoUtils.addResolvedMethodInfo(info, r);
                 InfoUtils.addMethodInfo(info, d);
-                InfoUtils.isGetSet(info, type, rt);
                 info.memberType = MemberEnum.METHOD;
+                InfoUtils.isGetSet(info, type, rt);
             } else if (m.isConstructorDeclaration()) {
                 ConstructorDeclaration d = m.asConstructorDeclaration();
                 ResolvedConstructorDeclaration r = d.resolve();
                 String sign = InfoUtils.methodSign(r);
                 info = typeInfo.memberInfo.computeIfAbsent(sign, s -> new MemberInfo());
+                // 为了修正接口方法默认共有所以先传
                 info.typeInfo = typeInfo;
                 InfoUtils.addResolvedMethodInfo(info, r);
                 InfoUtils.addMethodInfo(info, d);
