@@ -41,7 +41,7 @@ class NodeUtils {
         }
         String simpleParamNamesStr = info.simpleParamNamesStr();
         if (simpleParamNamesStr != null) {
-            list.add(info.paramNamesStr());
+            list.add(simpleParamNamesStr);
         }
         list.add(info.paramTypes.stream()
                 .map(GraphvizUtils::escape)
