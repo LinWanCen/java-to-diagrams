@@ -22,6 +22,7 @@ class NodeUtils {
      */
     static String[] methodRecords(MemberInfo info) {
         ArrayList<String> list = new ArrayList<>();
+        // 文档注释
         String returnComment = info.returnComment == null || "".equals(info.returnComment)
                 ? ""
                 : " : " + info.returnComment;
@@ -29,7 +30,8 @@ class NodeUtils {
         if (comment.trim().length() > 0) {
             list.add(GraphvizUtils.label(GraphvizUtils.escape(comment)));
         }
-        String returnType = info.returnType == null ? "" : " : " + info.returnType;
+        // 修饰符 名字 返回类型
+        String returnType = info.returnType == null ? "" : " : " + GraphvizUtils.escape(info.returnType);
         list.add(info.modSymbol() + info.name + returnType);
         // 没有参数
         if (info.paramNames.isEmpty()) {
@@ -39,10 +41,12 @@ class NodeUtils {
         if (info.haveParamComments) {
             list.add(GraphvizUtils.escape(info.paramCommentsStr()));
         }
+        // 参数名为类型首字母小写时省略为 ~
         String simpleParamNamesStr = info.simpleParamNamesStr();
         if (simpleParamNamesStr != null) {
             list.add(simpleParamNamesStr);
         }
+        // 参数类型
         list.add(info.paramTypes.stream()
                 .map(GraphvizUtils::escape)
                 .collect(Collectors.joining(", ", "(", ")")));
