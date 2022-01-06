@@ -37,6 +37,9 @@ class Step6Over {
             }
             ResolvedReferenceTypeDeclaration rt = ort.get();
             String parentTypeSign = InfoUtils.resolvedTypeSign(rt);
+            if (parentTypeSign.startsWith("java")) {
+                continue;
+            }
             TypeInfo parentTypeInfo = typeMap.get(parentTypeSign);
             if (parentTypeInfo == null) {
                 parentTypeInfo = new TypeInfo();

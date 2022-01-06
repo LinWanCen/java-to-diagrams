@@ -70,6 +70,10 @@ public enum Conf {
     @SuppressWarnings("SpellCheckingInspection")
     DIAGRAMS_XMIND_CALL("diagrams_xmind_call", "true"),
 
+    /** 思维导图 类调用树 */
+    @SuppressWarnings("SpellCheckingInspection")
+    DIAGRAMS_XMIND_CLASS_CALL("diagrams_xmind_class_call", "true"),
+
     /** 思维导图显示类名 */
     @SuppressWarnings("SpellCheckingInspection")
     DIAGRAMS_XMIND_CLASS("diagrams_xmind_class", "true"),
