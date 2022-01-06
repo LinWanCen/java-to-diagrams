@@ -31,18 +31,19 @@ class Step6Over {
                           TypeInfo overTypeInfo,
                           boolean isImpl) {
         for (ResolvedReferenceType parent : parents) {
-            Optional<ResolvedReferenceTypeDeclaration> ort = parent.getTypeDeclaration();
-            if (!ort.isPresent()) {
+            Optional<ResolvedReferenceTypeDeclaration> optional = parent.getTypeDeclaration();
+            if (!optional.isPresent()) {
                 continue;
             }
-            ResolvedReferenceTypeDeclaration rt = ort.get();
-            String parentTypeSign = InfoUtils.resolvedTypeSign(rt);
+            ResolvedReferenceTypeDeclaration parentRt = optional.get();
+            String parentTypeSign = InfoUtils.resolvedTypeSign(parentRt);
             if (parentTypeSign.startsWith("java")) {
                 continue;
             }
             TypeInfo parentTypeInfo = typeMap.get(parentTypeSign);
             if (parentTypeInfo == null) {
                 parentTypeInfo = new TypeInfo();
+                InfoUtils.addResolvedTypeInfo(parentTypeInfo, parentRt);
                 typeMap.put(parentTypeSign, parentTypeInfo);
                 if (overTypeInfo.comment == null && parentTypeInfo.comment != null) {
                     overTypeInfo.comment = parentTypeInfo.comment;
