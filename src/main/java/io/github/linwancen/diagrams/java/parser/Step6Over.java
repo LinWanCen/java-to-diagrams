@@ -72,9 +72,9 @@ class Step6Over {
                     continue;
                 }
                 // 重写的方法
-                MemberInfo overInfo = InfoFactory.getOrCreateMemberInfo(overTypeInfo, overMethod);
+                MemberInfo overInfo = InfoFactory.getOrCreateMethodInfo(overTypeInfo, overMethod);
                 // 父类或实现类方法
-                MemberInfo parentInfo = InfoFactory.getOrCreateMemberInfo(parentTypeInfo, parentMethod);
+                MemberInfo parentInfo = InfoFactory.getOrCreateMethodInfo(parentTypeInfo, parentMethod);
                 if (overInfo.comment == null && parentInfo.comment != null) {
                     overInfo.comment = parentInfo.comment;
                     overInfo.commentLines = parentInfo.commentLines;

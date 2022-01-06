@@ -47,7 +47,7 @@ class Step5MethodCall {
                 InfoUtils.addResolvedTypeInfo(info, rt);
                 return info;
             });
-            MemberInfo callInfo = InfoFactory.getOrCreateMemberInfo(callTypeInfo, r);
+            MemberInfo callInfo = InfoFactory.getOrCreateMethodInfo(callTypeInfo, r);
 
             usageInfo.callInfo.put(callInfo.sign, callInfo);
             usageInfo.typeInfo.callInfo.put(callInfo.typeInfo.sign, callInfo.typeInfo);

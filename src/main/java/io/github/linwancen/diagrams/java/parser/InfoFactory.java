@@ -4,6 +4,7 @@ import com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration;
 import com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration;
 import io.github.linwancen.diagrams.java.api.bean.MemberInfo;
 import io.github.linwancen.diagrams.java.api.bean.TypeInfo;
+import io.github.linwancen.diagrams.java.api.dict.MemberEnum;
 
 /**
  * JavaInfo 工厂类
@@ -15,7 +16,7 @@ class InfoFactory {
     /**
      * 获取或新建方法
      */
-    static MemberInfo getOrCreateMemberInfo(TypeInfo typeInfo, ResolvedMethodDeclaration r) {
+    static MemberInfo getOrCreateMethodInfo(TypeInfo typeInfo, ResolvedMethodDeclaration r) {
         ResolvedReferenceTypeDeclaration rt = r.declaringType();
         String sign = InfoUtils.methodSign(r);
 
