@@ -72,18 +72,19 @@ public class JavaParseImplGraphviz implements JavaParse {
             return;
         }
         Node node = node(GraphvizUtils.escape(info.sign));
-        // 字段点线
-        if (info.memberType == MemberEnum.FIELD) {
-            if (!showField) {
-                return;
-            }
-            node = node.with(Style.DOTTED);
+        // 字段下划线
+        if (info.memberType == MemberEnum.FIELD && !showField) {
+            return;
         }
-        // 构造方法虚线
+        // 构造方法
         if (info.memberType == MemberEnum.CONSTRUCTOR) {
-            node = node.with(Style.DASHED);
+            node = node.with(Style.BOLD);
         }
         node = GraphvizUtils.rankDirRecords(node, this.rankDir, NodeUtils.methodRecords(info));
+        // 字段下划线
+        if (info.memberType == MemberEnum.FIELD) {
+            node = node.with(Shape.UNDERLINE);
+        }
         cluster = cluster.with(node);
         typeMethodMap.get(info.typeInfo.sign).put(info.sign, node);
     }
@@ -143,8 +144,8 @@ public class JavaParseImplGraphviz implements JavaParse {
         g = g.with(graph("tip").cluster()
                 .graphAttr().with(Color.BLUE, Label.of("tip:class"))
                 .with(NodeUtils.tipNode(rankDir))
-                .with(node("tip_field").with(Records.of(" 字段\nfield")).with(Style.DOTTED))
-                .with(node("tip_constructor").with(Records.of(" 构造方法\nconstructor")).with(Style.DASHED))
+                .with(node("tip_field").with(Records.of(" 字段\nfield")).with(Shape.UNDERLINE))
+                .with(node("tip_constructor").with(Records.of(" 构造方法\nconstructor")).with(Style.BOLD))
         );
         GraphvizUtils.toFile(g, outDir, outName, "方法关系图");
     }
