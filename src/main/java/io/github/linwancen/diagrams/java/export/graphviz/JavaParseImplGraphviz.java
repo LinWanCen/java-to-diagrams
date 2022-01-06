@@ -20,7 +20,7 @@ import static guru.nidi.graphviz.model.Factory.graph;
 import static guru.nidi.graphviz.model.Factory.node;
 
 /**
- * Graphviz 关系图 实现
+ * Graphviz 方法关系图 实现
  */
 public class JavaParseImplGraphviz implements JavaParse {
 
@@ -143,7 +143,7 @@ public class JavaParseImplGraphviz implements JavaParse {
                 (parent, over) -> g = g.with(Uml.from(over).implementsFor(parent)));
         g = g.with(graph("tip").cluster()
                 .graphAttr().with(Color.BLUE, Label.of("tip:class"))
-                .with(NodeUtils.tipNode(rankDir))
+                .with(NodeUtils.methodTipNode(rankDir))
                 .with(node("tip_field").with(Records.of(" 字段\nfield")).with(Shape.UNDERLINE))
                 .with(node("tip_constructor").with(Records.of(" 构造方法\nconstructor")).with(Style.BOLD))
         );

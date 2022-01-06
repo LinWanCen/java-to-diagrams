@@ -50,9 +50,11 @@ public enum Conf {
 
     // region 关系图
 
-    /** 关系图 */
+    /** 类关系图 */
+    DIAGRAMS_DOT_CLASS("diagrams_dot_class", "true"),
+    /** 方法关系图 */
     DIAGRAMS_DOT("diagrams_dot", "true"),
-    /** 关系图 显示字段 */
+    /** 方法关系图 显示字段 */
     DIAGRAMS_DOT_FIELD("diagrams_dot_field", "false"),
     /** 关系图 方向 */
     DIAGRAMS_DOT_DIR("diagrams_dot_dir", "LEFT_TO_RIGHT"),

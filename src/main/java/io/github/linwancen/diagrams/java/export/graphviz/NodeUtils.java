@@ -3,6 +3,7 @@ package io.github.linwancen.diagrams.java.export.graphviz;
 import guru.nidi.graphviz.attribute.Rank;
 import guru.nidi.graphviz.model.Node;
 import io.github.linwancen.diagrams.java.api.bean.MemberInfo;
+import io.github.linwancen.diagrams.java.api.bean.TypeInfo;
 import io.github.linwancen.util.graphviz.GraphvizUtils;
 
 import java.util.ArrayList;
@@ -17,9 +18,20 @@ class NodeUtils {
 
     private NodeUtils() {}
 
-    /**
-     * 方法块
-     */
+    /** 类块 */
+    static String[] typeRecords(TypeInfo info) {
+        ArrayList<String> list = new ArrayList<>();
+        // 文档注释
+        String comment = info.getCommentNotNull(0);
+        if (comment.trim().length() > 0) {
+            list.add(GraphvizUtils.label(GraphvizUtils.escape(comment)));
+        }
+        // 修饰符 名字 返回类型
+        list.add(info.type.symbol + info.modSymbol() + info.name);
+        return list.toArray(new String[0]);
+    }
+
+    /** 方法块 */
     static String[] methodRecords(MemberInfo info) {
         ArrayList<String> list = new ArrayList<>();
         // 文档注释
@@ -54,7 +66,7 @@ class NodeUtils {
     }
 
     /** 提示节点 */
-    static Node tipNode(Rank.RankDir rankDir) {
+    static Node methodTipNode(Rank.RankDir rankDir) {
         String[] recs = {
                 "comment : returnComment",
                 "name : returnType",

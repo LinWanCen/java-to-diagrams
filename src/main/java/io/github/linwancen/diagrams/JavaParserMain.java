@@ -3,6 +3,7 @@ package io.github.linwancen.diagrams;
 import io.github.linwancen.diagrams.java.api.JavaParse;
 import io.github.linwancen.diagrams.java.export.excel.JavaParseImplExcel;
 import io.github.linwancen.diagrams.java.export.graphviz.JavaParseImplGraphviz;
+import io.github.linwancen.diagrams.java.export.graphviz.JavaParseImplGraphvizClass;
 import io.github.linwancen.diagrams.java.export.xmind.JavaParseImplXMindCall;
 import io.github.linwancen.diagrams.java.export.xmind.JavaParseImplXMindClassCall;
 import io.github.linwancen.diagrams.java.export.xmind.JavaParseImplXMindTree;
@@ -80,6 +81,7 @@ public class JavaParserMain {
         add(parsers, Conf.DIAGRAMS_XMIND_CALL, new JavaParseImplXMindCall(outDir, outName));
         add(parsers, Conf.DIAGRAMS_XMIND_CLASS_CALL, new JavaParseImplXMindClassCall(outDir, outName));
         add(parsers, Conf.DIAGRAMS_DOT, new JavaParseImplGraphviz(outDir, outName));
+        add(parsers, Conf.DIAGRAMS_DOT_CLASS, new JavaParseImplGraphvizClass(outDir, outName));
         add(parsers, Conf.DIAGRAMS_EXCEL, new JavaParseImplExcel(outDir, outName));
 
         Step1Dirs.parseDirs(parsers, files);
