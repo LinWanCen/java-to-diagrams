@@ -31,8 +31,10 @@
 - 思维导图 调用树 多调用时复制并标红
 - 思维导图 类调用树 多调用时复制并标红
 - 思维导图 成员树
-- 关系图（**需要安装 Graphviz 并把它的`bin`目录设置到`path`**）
+- 类关系图（**需要安装 Graphviz 并把它的`bin`目录设置到`path`**）
+- 方法关系图（**需要安装 Graphviz 并把它的`bin`目录设置到`path`**）
 - Excel 表格
+
 
 - 根据包名自动添加源文件根路径
 - 自动向上查找 pom.xml 文件执行`dependency:build-classpath`获取依赖 jar
@@ -81,6 +83,8 @@
 
 ## 效果图
 
-![xmind-demo.png](xmind-demo.png)
-
-![graphviz-dot-demo.png](graphviz-dot-demo.png)
+仅供参考 |
+---|
+![graphviz-dot-class-demo.png](graphviz-dot-class-demo.png) |
+![graphviz-dot-demo.png](graphviz-dot-demo.png) |
+![xmind-demo.png](xmind-demo.png) |
