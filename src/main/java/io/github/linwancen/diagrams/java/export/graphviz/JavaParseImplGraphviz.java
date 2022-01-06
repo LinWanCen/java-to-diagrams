@@ -52,7 +52,7 @@ public class JavaParseImplGraphviz implements JavaParse {
         if (cluster != null) {
             g = g.with(cluster);
         }
-        String text = typeInfo.getCommentLine(0) + typeInfo.modSymbol() + typeInfo.sign;
+        String text = typeInfo.getCommentLine(0) + typeInfo.type.symbol + typeInfo.modSymbol() + typeInfo.sign;
         text = GraphvizUtils.escape(text);
         cluster = graph(typeInfo.sign + "_C")
                 .cluster()

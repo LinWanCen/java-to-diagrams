@@ -22,12 +22,11 @@ public class ModifiersInfoTest {
         mod.isAbstract = true;
         mod.isStatic = true;
         mod.isFinal = true;
-        mod.type = TypeEnum.CLAZZ;
         String modSymbol = mod.modSymbol();
         LOG.info(modSymbol);
-        assertEquals(modSymbol, "asf+C ");
+        assertEquals(modSymbol, "asf+ ");
         String modStr = mod.modStr();
         LOG.info(modStr);
-        assertEquals(modStr, "public abstract static final class ");
+        assertEquals(modStr, "public abstract static final ");
     }
 }

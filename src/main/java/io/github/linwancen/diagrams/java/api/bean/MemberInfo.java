@@ -1,7 +1,6 @@
 package io.github.linwancen.diagrams.java.api.bean;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.github.linwancen.diagrams.java.api.dict.MemberEnum;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -9,7 +8,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MemberInfo extends JavaInfo {
-    private static final Logger LOG = LoggerFactory.getLogger(MemberInfo.class);
+    /** 成员类型 */
+    public MemberEnum memberType;
 
     /** 类 */
     public TypeInfo typeInfo;

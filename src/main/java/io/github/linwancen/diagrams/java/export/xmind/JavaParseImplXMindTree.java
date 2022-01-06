@@ -68,7 +68,13 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
         }
         ITopic typeTopic = workbook.createTopic();
 
-        StringBuilder text = stringBuilderForm(typeInfo);
+        StringBuilder text = new StringBuilder();
+        text.append(typeInfo.getCommentNotNull(0));
+        text.append("\n");
+        if (showSymbol) {
+            text.append(typeInfo.type.symbol).append(typeInfo.modSymbol());
+        }
+        text.append(typeInfo.name);
 
         typeTopic.setTitleText(text.toString());
 
@@ -100,20 +106,6 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
     }
 
     /**
-     * 注释符号和名字
-     */
-    private StringBuilder stringBuilderForm(JavaInfo typeInfo) {
-        StringBuilder text = new StringBuilder();
-        text.append(typeInfo.getCommentNotNull(0));
-        text.append("\n");
-        if (showSymbol) {
-            text.append(typeInfo.modSymbol());
-        }
-        text.append(typeInfo.name);
-        return text;
-    }
-
-    /**
      * 方法生成主题
      */
     @Override
@@ -124,7 +116,13 @@ public class JavaParseImplXMindTree extends AbsJavaParseImplXMind {
         }
         ITopic memberTopic = workbook.createTopic();
 
-        StringBuilder memberText = stringBuilderForm(info);
+        StringBuilder memberText = new StringBuilder();
+        memberText.append(info.getCommentNotNull(0));
+        memberText.append("\n");
+        if (showSymbol) {
+            memberText.append(info.typeInfo.type.symbol).append(info.modSymbol());
+        }
+        memberText.append(info.name);
 
         if (info.memberType == MemberEnum.CONSTRUCTOR || info.memberType == MemberEnum.METHOD) {
             memberText.append("()");

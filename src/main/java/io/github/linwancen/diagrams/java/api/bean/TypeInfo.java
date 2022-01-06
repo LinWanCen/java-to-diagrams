@@ -1,5 +1,7 @@
 package io.github.linwancen.diagrams.java.api.bean;
 
+import io.github.linwancen.diagrams.java.api.dict.TypeEnum;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -9,6 +11,9 @@ import java.util.List;
  * @author linwancheng
  */
 public class TypeInfo extends JavaInfo {
+    /** 类型 */
+    public TypeEnum type;
+
     /** 作者 */
     public List<String> authorList = new ArrayList<>();
 

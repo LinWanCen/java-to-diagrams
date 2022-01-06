@@ -56,7 +56,7 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
         text.append(info.getCommentNotNull(0));
         text.append("\n");
         if (showSymbol) {
-            text.append(info.typeInfo.type.symbol).append(info.modSymbol()).append(" ");
+            text.append(info.typeInfo.type.symbol).append(info.modSymbol());
         }
         if (showClass && !sameClassCall) {
             text.append(info.className()).append(".");

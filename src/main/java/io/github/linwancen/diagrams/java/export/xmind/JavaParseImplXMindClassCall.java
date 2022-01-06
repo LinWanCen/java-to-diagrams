@@ -41,7 +41,7 @@ public class JavaParseImplXMindClassCall extends AbsJavaParseImplXMind {
         text.append(info.getCommentNotNull(0));
         text.append("\n");
         if (showSymbol) {
-            text.append(info.modSymbol()).append(" ");
+            text.append(info.type.symbol).append(info.modSymbol());
         }
         text.append(info.name);
         iTopic.setTitleText(text.toString());

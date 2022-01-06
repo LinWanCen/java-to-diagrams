@@ -52,19 +52,12 @@ public class ModifiersInfo {
         return isFinal ? "f" : "";
     }
 
-    /** 类型 */
-    public TypeEnum type;
-
-    /** 成员类型 */
-    public MemberEnum memberType;
-
     /**
      * 返回所有修饰符
      * <br>最后加空格以便拼接
      */
     public String modSymbol() {
-        String s = abstractSymbol() + staticSymbol() + finalSymbol() + access.symbol;
-        return type == null ? s : s + type.symbol + " ";
+        return abstractSymbol() + staticSymbol() + finalSymbol() + access.symbol + " ";
     }
 
     /**
@@ -72,7 +65,6 @@ public class ModifiersInfo {
      * <br>最后加空格以便拼接
      */
     public String modStr() {
-        String s = access.string + " " + abstractStr() + " " + staticStr() + " " + finalStr() + " ";
-        return type == null ? s : s + type.string + " ";
+        return access.string + " " + abstractStr() + " " + staticStr() + " " + finalStr() + " ";
     }
 }

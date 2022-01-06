@@ -32,7 +32,7 @@ class NodeUtils {
         }
         // 修饰符 名字 返回类型
         String returnType = info.returnType == null ? "" : " : " + GraphvizUtils.escape(info.returnType);
-        list.add(info.modSymbol() + info.name + returnType);
+        list.add(info.typeInfo.type.symbol + info.modSymbol() + info.name + returnType);
         // 没有参数
         if (info.paramNames.isEmpty()) {
             return list.toArray(new String[0]);
