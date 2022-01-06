@@ -250,10 +250,8 @@ class InfoUtils {
      */
     static void isGetSet(MemberInfo methodInfo, TypeDeclaration<?> type, ResolvedReferenceTypeDeclaration rt) {
         String name = null;
-        if (methodInfo.name.length() > 3) {
-            if (methodInfo.name.startsWith("get") || methodInfo.name.startsWith("set")) {
-                name = methodInfo.name.substring(3);
-            }
+        if (methodInfo.name.length() > 3 && (methodInfo.name.startsWith("get") || methodInfo.name.startsWith("set"))) {
+            name = methodInfo.name.substring(3);
         } else if (methodInfo.name.length() > 2 && methodInfo.name.startsWith("is")) {
             name = methodInfo.name.substring(2);
         }
