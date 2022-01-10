@@ -98,7 +98,6 @@ public class GraphvizUtils {
             Graphviz.useEngine(engine.timeout(2, TimeUnit.MINUTES));
             Graphviz graph = Graphviz.fromGraph(g);
             Format[] formats = {
-                    Format.DOT,
                     Format.PNG,
                     Format.SVG,
             };
