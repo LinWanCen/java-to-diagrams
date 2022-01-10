@@ -34,7 +34,7 @@ public class JavaParseImplGraphvizClass implements JavaParse {
 
     public JavaParseImplGraphvizClass(File outDir, String outName) {
         this.outDir = outDir;
-        this.outName = outName;
+        this.outName = outName + "_class";
     }
 
     /**
