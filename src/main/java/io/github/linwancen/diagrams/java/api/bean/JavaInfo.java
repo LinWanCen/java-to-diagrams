@@ -24,7 +24,7 @@ public class JavaInfo extends ModifiersInfo {
     /** 是否选择的文件 */
     public boolean isSelect;
 
-    /** 结束行 */
+    /** 行数 */
     public int lineCount;
 
     /**

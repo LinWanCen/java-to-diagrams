@@ -36,6 +36,19 @@ public class MemberInfo extends JavaInfo {
         return paramNames.stream().collect(Collectors.joining(", ", "(", ")"));
     }
 
+    public String paramNamesTypeStr() {
+        StringBuilder builder = new StringBuilder("(");
+        for (int i = 0; i < paramTypes.size(); i++) {
+            builder.append(paramTypes.get(i)).append(" ").append(paramNames.get(i)).append(", ");
+        }
+        int length = builder.length();
+        if (length != 1 && builder.charAt(length - 2) == ',') {
+            builder.delete(length - 2, length);
+        }
+        builder.append(")");
+        return builder.toString();
+    }
+
     public String simpleParamNamesStr() {
         List<String> simpleNames = new ArrayList<>();
         boolean hasNameDiff = false;

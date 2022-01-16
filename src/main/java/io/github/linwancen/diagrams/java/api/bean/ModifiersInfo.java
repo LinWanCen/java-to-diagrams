@@ -1,8 +1,6 @@
 package io.github.linwancen.diagrams.java.api.bean;
 
 import io.github.linwancen.diagrams.java.api.dict.AccessEnum;
-import io.github.linwancen.diagrams.java.api.dict.MemberEnum;
-import io.github.linwancen.diagrams.java.api.dict.TypeEnum;
 
 /**
  * 常用修饰词
@@ -57,7 +55,10 @@ public class ModifiersInfo {
      * <br>最后加空格以便拼接
      */
     public String modSymbol() {
-        return abstractSymbol() + staticSymbol() + finalSymbol() + access.symbol + " ";
+        return abstractSymbol()
+                + staticSymbol()
+                + finalSymbol()
+                + access.symbol + " ";
     }
 
     /**
@@ -65,6 +66,9 @@ public class ModifiersInfo {
      * <br>最后加空格以便拼接
      */
     public String modStr() {
-        return access.string + " " + abstractStr() + " " + staticStr() + " " + finalStr() + " ";
+        return access.string
+                + (isAbstract ? " abstract" : "")
+                + (isStatic ? " static" : "")
+                + (isFinal ? " final" : "");
     }
 }
