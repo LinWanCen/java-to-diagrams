@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -47,7 +46,7 @@ class SolverUtils {
     /**
      * 添加用于解析的 Maven jar 包
      */
-    static void addSolverMavenJars(CombinedTypeSolver solver, File file, HashSet<String> addPoms, HashSet<String> addJars) {
+    static void addSolverMavenJars(CombinedTypeSolver solver, File file, Set<String> addPoms, Set<String> addJars) {
         File pomFile = MavenUtils.parentPomFile(file);
         if (pomFile == null) {
             return;
@@ -76,7 +75,7 @@ class SolverUtils {
      * <br>路径获取命令：<br>
      * mvn dependency:build-classpath
      */
-    static void addSolverJars(CombinedTypeSolver solver, String pathToJars, HashSet<String> addJars) {
+    static void addSolverJars(CombinedTypeSolver solver, String pathToJars, Set<String> addJars) {
         String[] pathToJarArr = FileUtils.split(pathToJars);
         for (String pathToJar : pathToJarArr) {
             if (File.separatorChar == '\\') {

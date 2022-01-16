@@ -32,7 +32,10 @@ class Step2File {
                           LinkedHashMap<String, String> packCommentMap,
                           File file,
                           CombinedTypeSolver solver,
-                          Set<String> addSrc) {
+                          Set<String> addPoms,
+                          Set<String> addJars,
+                          Set<String> addSrc
+    ) {
         CompilationUnit cu = StaticJavaParser.parse(FileUtils.read(file));
         List<String> packNames = new ArrayList<>();
         List<String> packComments = new ArrayList<>();
@@ -54,6 +57,9 @@ class Step2File {
         }
         if ("true".equals(Conf.DIAGRAMS_SOLVER_AUTO_SRC.get())) {
             SolverUtils.addSolverDir(solver, srcPath, addSrc);
+        }
+        if ("true".equals(Conf.DIAGRAMS_SOLVER_AUTO_JAR_EACH.get())) {
+            SolverUtils.addSolverMavenJars(solver, file, addPoms, addJars);
         }
         for (TypeDeclaration<?> type : cu.getTypes()) {
             Step3Type.parseType(typeMap, javaParses, type, packNames, packComments);

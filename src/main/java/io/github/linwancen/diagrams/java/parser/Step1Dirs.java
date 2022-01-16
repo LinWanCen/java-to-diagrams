@@ -33,12 +33,19 @@ public class Step1Dirs {
         Pattern includePath = Pattern.compile(Conf.DIAGRAMS_PATH_INCLUDE.get());
         Pattern excludePath = Pattern.compile(Conf.DIAGRAMS_PATH_EXCLUDE.get());
 
+        // 配置解析器（当前线程有效）
         CombinedTypeSolver solver = new CombinedTypeSolver();
-        // 类加载器必须添加以便获得 java 的
+        JavaSymbolSolver symbolSolver = new JavaSymbolSolver(solver);
+        StaticJavaParser.getConfiguration().setSymbolResolver(symbolSolver);
+
+        // 添加类加载器必须添加以便获得 java 的
         solver.add(new ClassLoaderTypeSolver(ClassLoader.getSystemClassLoader()));
+
+        // 避免重复添加用
         HashSet<String> addPoms = new HashSet<>();
         HashSet<String> addJars = new HashSet<>();
         HashSet<String> addSrc = new HashSet<>();
+
         // 加载设置的解析资源
         String src = Conf.DIAGRAMS_SOLVER_SRC.get();
         if (src.length() > 0) {
@@ -50,8 +57,6 @@ public class Step1Dirs {
         if (jar.length() > 0) {
             SolverUtils.addSolverJars(solver, jar, addJars);
         }
-        JavaSymbolSolver symbolSolver = new JavaSymbolSolver(solver);
-        StaticJavaParser.getConfiguration().setSymbolResolver(symbolSolver);
         LinkedHashMap<String, TypeInfo> typeMap = new LinkedHashMap<>();
         LinkedHashMap<String, String> packComment = new LinkedHashMap<>();
         for (File file : files) {
@@ -61,14 +66,14 @@ public class Step1Dirs {
             FileUtils.deep(
                     f -> {
                         if (!"package-info.java".equals(f.getName())) {
-                            Step2File.parseFile(typeMap, javaParses, packComment, f, solver, addSrc);
+                            Step2File.parseFile(typeMap, javaParses, packComment, f, solver, addPoms, addJars, addSrc);
                         }
                     },
                     f -> {
                         if (f.isDirectory()) {
                             File packageInfo = new File(f, "package-info.java");
                             if (packageInfo.exists()) {
-                                Step2File.parseFile(typeMap, javaParses, packComment, packageInfo, solver, addSrc);
+                                Step2File.parseFile(typeMap, javaParses, packComment, packageInfo, solver, addPoms, addJars, addSrc);
                             }
                             return true;
                         }

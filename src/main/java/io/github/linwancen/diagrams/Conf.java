@@ -34,10 +34,12 @@ public enum Conf {
     DIAGRAMS_SOLVER_SRC("diagrams_solver_src", ""),
     /** 解析 在 jar 中 分隔符 Windows ; Mac/Linux : */
     DIAGRAMS_SOLVER_JAR("diagrams_solver_jar", ""),
-    /** 解析 自动获取源码目录 */
+    /** 解析 自动获取 源码目录 */
     DIAGRAMS_SOLVER_AUTO_SRC("diagrams_solver_auto_src", "true"),
     /** 解析 自动获取 maven jar，需要设置Maven环境变量 */
     DIAGRAMS_SOLVER_AUTO_JAR("diagrams_solver_auto_jar", "true"),
+    /** 解析 自动获取 maven jar，需要设置Maven环境变量 */
+    DIAGRAMS_SOLVER_AUTO_JAR_EACH("diagrams_solver_auto_jar_each", "false"),
 
     // endregion 寻找类
 
