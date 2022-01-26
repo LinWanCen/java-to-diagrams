@@ -33,6 +33,17 @@ public abstract class AbsJavaParseImplXMind implements JavaParse {
 
     protected final boolean showSymbol = "true".equals(Conf.DIAGRAMS_SHOW_SYMBOL.get());
 
+    protected static void alone(ITopic rootTopic, ITopic alone) {
+        alone.setTitleText("独立节点\nalone");
+        alone.setFolded(true);
+        for (ITopic t : rootTopic.getAllChildren()) {
+            if (t.getAllChildren().isEmpty()) {
+                alone.add(t);
+            }
+        }
+        rootTopic.add(alone);
+    }
+
     /**
      * 处理并生成思维导图文件
      */

@@ -145,15 +145,7 @@ public class JavaParseImplXMindCall extends AbsJavaParseImplXMind {
         }
 
         // 最后再判断独立节点是因为可能前面被筛掉导致独立
-        ITopic alone = workbook.createTopic();
-        alone.setTitleText("独立节点\nalone");
-        alone.setFolded(true);
-        for (ITopic t : rootTopic.getAllChildren()) {
-            if (t.getAllChildren().isEmpty()) {
-                alone.add(t);
-            }
-        }
-        rootTopic.add(alone);
+        alone(rootTopic, workbook.createTopic());
     }
 
     /**

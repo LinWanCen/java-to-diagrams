@@ -11,6 +11,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * XMind 思维导图/脑图 类调用树 实现
@@ -88,7 +89,7 @@ public class JavaParseImplXMindClassCall extends AbsJavaParseImplXMind {
         primarySheet.setTitleText("call");
         ITopic rootTopic = primarySheet.getRootTopic();
         rootTopic.setStructureClass(XMindUtils.LOGIC_RIGHT);
-        for (Map.Entry<String, TypeInfo> entry : typeMap.entrySet()) {
+        for (Entry<String, TypeInfo> entry : typeMap.entrySet()) {
             TypeInfo typeInfo = entry.getValue();
             if (!typeInfo.usageInfo.isEmpty()
                     || !typeInfo.faceInfo.isEmpty()
@@ -105,15 +106,7 @@ public class JavaParseImplXMindClassCall extends AbsJavaParseImplXMind {
         }
 
         // 最后再判断独立节点是因为可能前面被筛掉导致独立
-        ITopic alone = workbook.createTopic();
-        alone.setTitleText("独立节点\nalone");
-        alone.setFolded(true);
-        for (ITopic t : rootTopic.getAllChildren()) {
-            if (t.getAllChildren().isEmpty()) {
-                alone.add(t);
-            }
-        }
-        rootTopic.add(alone);
+        alone(rootTopic, workbook.createTopic());
     }
 
     /**

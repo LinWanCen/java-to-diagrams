@@ -1,6 +1,5 @@
 package io.github.linwancen.diagrams.java.export.xmind;
 
-import io.github.linwancen.diagrams.java.api.bean.JavaInfo;
 import io.github.linwancen.diagrams.java.api.bean.MemberInfo;
 import io.github.linwancen.diagrams.java.api.bean.TypeInfo;
 import io.github.linwancen.diagrams.java.api.dict.MemberEnum;
