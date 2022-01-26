@@ -52,7 +52,9 @@ class Step5MethodCall {
             usageInfo.callInfo.put(callInfo.sign, callInfo);
             usageInfo.typeInfo.callInfo.put(callInfo.typeInfo.sign, callInfo.typeInfo);
             callInfo.usageInfo.put(usageInfo.sign, usageInfo);
-            callInfo.typeInfo.usageInfo.put(usageInfo.typeInfo.sign, usageInfo.typeInfo);
+            if (!callInfo.typeInfo.sign.equals(usageInfo.typeInfo.sign)) {
+                callInfo.typeInfo.usageInfo.put(usageInfo.typeInfo.sign, usageInfo.typeInfo);
+            }
 
             javaParses.forEach(v -> v.call(usageInfo, callInfo));
         }
