@@ -33,7 +33,7 @@ class Step5MethodCall {
             try {
                 // 代码调用次数越多，源码量越多，这里花的时间越多
                 r = expr.resolve();
-            } catch (Exception e) {
+            } catch (Throwable e) {
                 // FIXME 目前已知解析失败：静态引用，::调用
                 LOG.warn("resolve fail:\n  {}.{}({}.java:1) -> {}\n  {}",
                         typeInfo.sign, usageInfo.name, typeInfo.name, expr.getNameAsString(),
