@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -59,12 +60,12 @@ class SolverUtils {
         LOG.info("get Maven Dep\tfile:///{}", pomFilePath);
         long startTime = System.nanoTime();
 
-        String dep = MavenUtils.getDep(pomFile);
+        List<String> depList = MavenUtils.getDep(pomFile);
 
         long useTime = (System.nanoTime() - startTime) / 1000000;
         LOG.info("get Maven Dep success, use {}ms", useTime);
 
-        if (dep != null) {
+        for (String dep : depList) {
             LOG.info("addSolverJars\t{}", dep);
             addSolverJars(solver, dep, addJars);
         }
